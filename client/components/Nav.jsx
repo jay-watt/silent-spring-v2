@@ -30,7 +30,7 @@ function Nav() {
 
   return (
     <>
-      <NavGroup>
+      <NavGroup className='bg-slate-600'>
         <NavLink to="/">Home</NavLink>
         <IfAuthenticated>
           <NavLink to="/" onClick={handleLogoff}>
