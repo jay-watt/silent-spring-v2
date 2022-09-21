@@ -1,6 +1,6 @@
 {
-  "name": "jwt-auth",
-  "description": "An exercise to practice how to apply authentication",
+  "name": "boilerplate",
+  "description": "boilerplate",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
