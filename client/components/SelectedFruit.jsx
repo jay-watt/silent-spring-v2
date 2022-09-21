@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-import { GridForm, ColOne, ColTwoText, Button } from './Styled'
-
 import { updateFruit, deleteFruit } from '../api'
 import { useAuth0 } from '@auth0/auth0-react'
 

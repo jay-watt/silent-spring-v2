@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import { GridForm, ColOne, ColTwoText, Button } from './Styled'
-
 import { addFruit } from '../api'
 import { useAuth0 } from '@auth0/auth0-react'
 
@@ -32,30 +30,32 @@ function AddFruit({ setFruits, closeAddForm, setError }) {
   return (
     <>
       <h2>Add new</h2>
-      <GridForm onSubmit={handleAdd}>
-        <ColOne>Name:</ColOne>
-        <ColTwoText
-          type="text"
-          name="name"
-          aria-label="adding-name"
-          value={addingName || ''}
-          onChange={handleAddChange}
-        />
-
-        <ColOne>Average Grams Each:</ColOne>
-        <ColTwoText
-          type="text"
-          name="averageGramsEach"
-          aria-label="adding-grams"
-          value={addingGrams || ''}
-          onChange={handleAddChange}
-        />
-
-        <Button type="submit">Add fruit</Button>
-        <Button type="button" onClick={closeAddForm}>
+      <form onSubmit={handleAdd}>
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            aria-label="adding-name"
+            value={addingName || ''}
+            onChange={handleAddChange}
+          />
+        </label>
+        <label>
+          Average Grams Each:
+          <input
+            type="text"
+            name="averageGramsEach"
+            aria-label="adding-grams"
+            value={addingGrams || ''}
+            onChange={handleAddChange}
+          />
+        </label>
+        <button type="submit">Add fruit</button>
+        <button type="button" onClick={closeAddForm}>
           Close
-        </Button>
-      </GridForm>
+        </button>
+      </form>
     </>
   )
 }

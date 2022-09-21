@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import SelectedFruit from './SelectedFruit'
 import AddFruit from './AddFruit'
-import { Error } from './Styled'
 
 import { getFruits } from '../api'
 
@@ -42,7 +41,7 @@ function Fruits() {
 
   return (
     <>
-      <Error onClick={hideError}>{error && `Error: ${error}`}</Error>
+      <div onClick={hideError}>{error && `Error: ${error}`}</div>
 
       <ul>
         {fruits.map((fruit) => (
