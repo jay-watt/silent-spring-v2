@@ -2,17 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import {
-  Error,
-  GridForm,
-  ColOne,
-  ColTwoText,
-  ColTwoField,
-  Button,
-  RadioLabel,
-  Radio,
-} from './Styled'
-
 import { addUser } from '../api'
 import { updateLoggedInUser } from '../slices/user'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -80,36 +69,38 @@ function Register() {
   return (
     <>
       <h2>Complete profile set up</h2>
-      {errorMsg && <Error onClick={hideError}>Error: {errorMsg}</Error>}
-      <GridForm onSubmit={handleSubmit}>
-        <ColOne htmlFor="username">Username:</ColOne>
-        <ColTwoText
-          type="text"
-          id="username"
-          name="username"
-          value={form.username}
-          onChange={handleChange}
-        />
-
-        <ColOne htmlFor="icon">
+      {errorMsg && <div onClick={hideError}>Error: {errorMsg}</div>}
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="username">
+          Username:
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={form.username}
+            onChange={handleChange}
+          />
+        </label>
+        <label htmlFor="icon">
           Which fruit best represents your personality?
-        </ColOne>
-        <ColTwoField id="icon">
+        </label>
+        <label id="icon">
           {icons.map((fruit) => (
-            <RadioLabel key={fruit} selected={form.icon === fruit}>
-              <Radio
+            <label key={fruit} selected={form.icon === fruit}>
+              <input
+                type="radio"
                 id={fruit}
                 value={fruit}
                 name="icon"
                 onChange={handleChange}
               />
               {fruit}
-            </RadioLabel>
+            </label>
           ))}
-        </ColTwoField>
+        </label>
 
-        <Button disabled={!(form.username && form.icon)}>Save Profile</Button>
-      </GridForm>
+        <button disabled={!(form.username && form.icon)}>Save Profile</button>
+      </form>
     </>
   )
 }

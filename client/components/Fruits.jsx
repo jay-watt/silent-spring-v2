@@ -46,12 +46,12 @@ function Fruits() {
       <ul>
         {fruits.map((fruit) => (
           <li key={fruit.id}>
-            <a
+            <button
               href="#"
               onClick={(e) => setSelectHandler(fruit, e)}
             >
               {fruit.name}
-            </a>
+            </button>
           </li>
         ))}
       </ul>
@@ -63,9 +63,9 @@ function Fruits() {
           closeAddForm={closeAddForm}
         />
       ) : (
-        <a href="#" onClick={openAddForm}>
+        <button href="#" onClick={openAddForm}>
           Add a Fruit
-        </a>
+        </button>
       )}
 
       {selected && (

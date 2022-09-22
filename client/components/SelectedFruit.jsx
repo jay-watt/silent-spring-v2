@@ -47,9 +47,9 @@ function SelectedFruit({ selected, clearSelected, setError, setFruits }) {
     <>
       <h2>Selected: {currentName}</h2>
       <p>Originally added by {user}</p>
-      <GridForm onSubmit={handleUpdate}>
-        <ColOne>Name:</ColOne>
-        <ColTwoText
+      <form onSubmit={handleUpdate}>
+        <label>Name:
+        <input
           type="text"
           name="name"
           aria-label="selected-name"
@@ -57,9 +57,9 @@ function SelectedFruit({ selected, clearSelected, setError, setFruits }) {
           value={editingName || ''}
           onChange={handleEditChange}
         />
-
-        <ColOne>Average Grams Each:</ColOne>
-        <ColTwoText
+        </label>
+        <label>Average Grams Each:
+        <input
           type="text"
           name="averageGramsEach"
           aria-label="selected-grams"
@@ -67,25 +67,25 @@ function SelectedFruit({ selected, clearSelected, setError, setFruits }) {
           value={editingGrams || ''}
           onChange={handleEditChange}
         />
-
-        <Button type="submit" data-testid="update-button">
+        </label>
+        <button type="submit" data-testid="update-button">
           Update fruit
-        </Button>
-        <Button
+        </button>
+        <button
           type="button"
           data-testid="delete-button"
           onClick={handleDelete}
         >
           Delete fruit
-        </Button>
-        <Button
+        </button>
+        <button
           type="button"
           data-testid="clear-button"
           onClick={clearSelected}
         >
           Clear selection
-        </Button>
-      </GridForm>
+        </button>
+      </form>
     </>
   )
 }

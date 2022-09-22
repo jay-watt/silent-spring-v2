@@ -1,18 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 import { useAuth0 } from '@auth0/auth0-react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-const NavGroup = styled.nav`
-  float: right;
-`
-
-const NavLink = styled(Link)`
-  margin-right: 30px;
-`
 
 function Nav() {
   const user = useSelector((state) => state.user)
@@ -30,12 +22,12 @@ function Nav() {
 
   return (
     <>
-      <NavGroup className='bg-slate-600'>
-        <NavLink to="/">Home</NavLink>
+      <nav className='bg-slate-600'>
+        <Link to="/">Home</Link>
         <IfAuthenticated>
-          <NavLink to="/" onClick={handleLogoff}>
+          <Link to="/" onClick={handleLogoff}>
             Log off
-          </NavLink>
+          </Link>
           <p>
             <span role="img" alt={user?.icon}>
               {user?.icon}
@@ -44,11 +36,11 @@ function Nav() {
           </p>
         </IfAuthenticated>
         <IfNotAuthenticated>
-          <NavLink to="/" onClick={handleSignIn}>
+          <Link to="/" onClick={handleSignIn}>
             Sign In
-          </NavLink>
+          </Link>
         </IfNotAuthenticated>
-      </NavGroup>
+      </nav>
       <h1>Fruit FTW!</h1>
     </>
   )
