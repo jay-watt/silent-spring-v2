@@ -2,12 +2,10 @@ import React from 'react'
 
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 import { useAuth0 } from '@auth0/auth0-react'
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 function Nav() {
-  const user = useSelector((state) => state.user)
-  const { logout, loginWithRedirect } = useAuth0()
+  const { logout, loginWithRedirect, user, isLoading } = useAuth0()
 
   function handleLogoff(e) {
     e.preventDefault()
@@ -28,10 +26,7 @@ function Nav() {
             Log off
           </Link>
           <p>
-            <span role="img" alt={user?.icon}>
-              {user?.icon}
-            </span>
-            {' ' + user.username}
+            {!isLoading && <span className="font-bold">{user?.email}</span>}
           </p>
         </IfAuthenticated>
         <IfNotAuthenticated>
