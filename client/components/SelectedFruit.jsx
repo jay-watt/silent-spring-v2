@@ -48,25 +48,27 @@ function SelectedFruit({ selected, clearSelected, setError, setFruits }) {
       <h2>Selected: {currentName}</h2>
       <p>Originally added by {user}</p>
       <form onSubmit={handleUpdate}>
-        <label>Name:
-        <input
-          type="text"
-          name="name"
-          aria-label="selected-name"
-          data-testid="selected-name"
-          value={editingName || ''}
-          onChange={handleEditChange}
-        />
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            aria-label="selected-name"
+            data-testid="selected-name"
+            value={editingName || ''}
+            onChange={handleEditChange}
+          />
         </label>
-        <label>Average Grams Each:
-        <input
-          type="text"
-          name="averageGramsEach"
-          aria-label="selected-grams"
-          data-testid="selected-grams"
-          value={editingGrams || ''}
-          onChange={handleEditChange}
-        />
+        <label>
+          Average Grams Each:
+          <input
+            type="text"
+            name="averageGramsEach"
+            aria-label="selected-grams"
+            data-testid="selected-grams"
+            value={editingGrams || ''}
+            onChange={handleEditChange}
+          />
         </label>
         <button type="submit" data-testid="update-button">
           Update fruit
