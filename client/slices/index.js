@@ -1,17 +1,15 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { getFruits } from '../api'
+/*** Example slice */
+// export const fetchFruits = createAsyncThunk('fruits/fetchFruits', () => {
+//   getFruits()
+// })
 
-export const fetchFruits = createAsyncThunk('fruits/fetchFruits', () => {
-  getFruits()
-})
+// const slice = createSlice({
+//   name: 'fruits',
+//   initialState: [],
+//   reducers: {},
+//   extraReducers: {
+//     [fetchFruits.pending]: (_, { payload }) => payload,
+//   },
+// })
 
-const slice = createSlice({
-  name: 'fruits',
-  initialState: [],
-  reducers: {},
-  extraReducers: {
-    [fetchFruits.pending]: (_, { payload }) => payload,
-  },
-})
-
-export default slice.reducer
+// export default slice.reducer

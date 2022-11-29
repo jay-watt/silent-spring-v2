@@ -1,11 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import fruits from './slices/index'
-
 const store = configureStore({
-  reducer: {
-    fruits,
-  },
+  reducer: {},
 })
 
 export default store
