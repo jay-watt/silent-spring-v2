@@ -47,7 +47,10 @@ function SelectedFruit({ selected, clearSelected, setError, setFruits }) {
     <>
       <h2>Selected: {currentName}</h2>
       <p>Originally added by {user}</p>
-      <form onSubmit={handleUpdate}>
+      <form
+        onSubmit={handleUpdate}
+        className="flex flex-col justify-start gap-1"
+      >
         <label>
           Name:
           <input
@@ -57,6 +60,11 @@ function SelectedFruit({ selected, clearSelected, setError, setFruits }) {
             data-testid="selected-name"
             value={editingName || ''}
             onChange={handleEditChange}
+            className="mx-4 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+      invalid:border-pink-500 invalid:text-pink-600
+      focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
           />
         </label>
         <label>
@@ -68,22 +76,33 @@ function SelectedFruit({ selected, clearSelected, setError, setFruits }) {
             data-testid="selected-grams"
             value={editingGrams || ''}
             onChange={handleEditChange}
+            className="mx-4 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+      disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+      invalid:border-pink-500 invalid:text-pink-600
+      focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
           />
         </label>
-        <button type="submit" data-testid="update-button">
-          Update fruit
+        <button
+          type="submit"
+          data-testid="update-button"
+          className="rounded-2xl bg-blue-800 hover:bg-blue-600 text-white p-2 px-4 w-1/12"
+        >
+          Update
         </button>
         <button
           type="button"
           data-testid="delete-button"
           onClick={handleDelete}
+          className="rounded-2xl bg-blue-800 hover:bg-blue-600 text-white p-2 px-4 w-1/12"
         >
-          Delete fruit
+          Delete
         </button>
         <button
           type="button"
           data-testid="clear-button"
           onClick={clearSelected}
+          className="rounded-2xl bg-blue-800 hover:bg-blue-600 text-white p-2 px-4 w-1/12"
         >
           Clear selection
         </button>

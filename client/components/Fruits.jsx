@@ -40,7 +40,7 @@ function Fruits() {
   }, [])
 
   return (
-    <>
+    <section className="mx-4">
       <div onClick={hideError}>{error && `Error: ${error}`}</div>
 
       <ul>
@@ -49,6 +49,7 @@ function Fruits() {
             <button
               href="#"
               onClick={(e) => setSelectHandler(fruit, e)}
+              className="text-purple-700 hover:text-purple-500"
             >
               {fruit.name}
             </button>
@@ -63,7 +64,11 @@ function Fruits() {
           closeAddForm={closeAddForm}
         />
       ) : (
-        <button href="#" onClick={openAddForm}>
+        <button
+          href="#"
+          onClick={openAddForm}
+          className="rounded-2xl bg-blue-800 hover:bg-blue-600 text-white p-2 px-4"
+        >
           Add a Fruit
         </button>
       )}
@@ -76,7 +81,7 @@ function Fruits() {
           setFruits={setFruits}
         />
       )}
-    </>
+    </section>
   )
 }
 

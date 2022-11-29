@@ -19,7 +19,7 @@ function Nav() {
 
   return (
     <>
-      <nav className="bg-slate-600">
+      <nav className="bg-slate-600 flex justify-end text-white gap-4 px-4">
         <Link to="/">Home</Link>
         <IfAuthenticated>
           <Link to="/" onClick={handleLogoff}>
@@ -35,7 +35,7 @@ function Nav() {
           </Link>
         </IfNotAuthenticated>
       </nav>
-      <h1>Fruit FTW!</h1>
+      <h1 className="mx-4 font-bold text-2xl">Fruit FTW!</h1>
     </>
   )
 }
