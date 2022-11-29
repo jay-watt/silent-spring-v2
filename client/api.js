@@ -27,30 +27,6 @@ export function updateFruit(fruit, token) {
     .catch(logError)
 }
 
-export function deleteFruit(id, token) {
-  return request
-    .delete(`${rootUrl}/fruits/${id}`)
-    .set('authorization', `Bearer ${token}`)
-    .then((res) => res.body.fruits)
-    .catch(logError)
-}
-
-export function getUser(token) {
-  return request
-    .get(`${rootUrl}/users`)
-    .set('Authorization', `Bearer ${token}`)
-    .then((res) => res.body)
-    .catch(logError)
-}
-
-export function addUser(user, token) {
-  return request
-    .post(`${rootUrl}/users`)
-    .set('Authorization', `Bearer ${token}`)
-    .send(user)
-    .catch(logError)
-}
-
 function logError(err) {
   if (err.response.text === 'Username Taken') {
     throw new Error('Username already taken - please choose another')
