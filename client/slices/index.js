@@ -1,15 +1,10 @@
-/*** Example slice */
-// export const fetchFruits = createAsyncThunk('fruits/fetchFruits', () => {
-//   getFruits()
-// })
+import { configureStore } from '@reduxjs/toolkit'
+import fruits from './fruits'
 
-// const slice = createSlice({
-//   name: 'fruits',
-//   initialState: [],
-//   reducers: {},
-//   extraReducers: {
-//     [fetchFruits.pending]: (_, { payload }) => payload,
-//   },
-// })
+const store = configureStore({
+  reducer: {
+    fruits,
+  },
+})
 
-// export default slice.reducer
+export default store

@@ -5,15 +5,15 @@ import { Auth0Provider } from '@auth0/auth0-react'
 import App from './components/App'
 import { Provider } from 'react-redux'
 
-import store from './store'
+import store from './slices'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Auth0Provider
-      domain=''
-      clientId=''
+      domain=""
+      clientId=""
       redirectUri={window.location.origin}
-      audience=''
+      audience=""
     >
       <Provider store={store}>
         <Router>
