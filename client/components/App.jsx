@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Nav />
-      <main className="p-4">
+      <main className="flex items-center justify-center h-screen">
         <Routes>
           <Route path="/" element={<Fruits />} />
           <Route path="/profile" element={<Profile />} />
