@@ -1,18 +1,16 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import React, { useEffect, useState } from 'react'
-import request from 'superagent'
 import { getUser, updateUser } from '../api'
 
 function Profile() {
-  const { getAccessTokenSilently } = useAuth0()
+  const { getAccessTokenSilently, user } = useAuth0()
   const [form, setForm] = useState({ color: '' })
 
   useEffect(() => {
     getAccessTokenSilently()
       .then(getUser)
       .then((userDetails) => {
-        console.log(userDetails)
-        setForm(() => userDetails)
+        setForm(() => ({ color: userDetails.user_metadata.color }))
       })
   }, [])
 
@@ -29,8 +27,16 @@ function Profile() {
   return (
     <>
       <form className="flex flex-col justify-start gap-1">
+        <label htmlFor="authId">
+          Auth0Id
+          <span className="ml-4 font-bold">{user?.sub}</span>
+        </label>
+        <label htmlFor="email">
+          Email
+          <span className="ml-4 font-bold">{user?.email}</span>
+        </label>
         <label htmlFor="color">
-          Favourite Colour
+          What's your favourite color
           <input
             type="text"
             name="color"
