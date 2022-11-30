@@ -40,10 +40,10 @@ function Fruits() {
   }, [])
 
   return (
-    <section className="mx-4">
+    <section className="flex flex-col gap-4 items-center justify-center h-screen">
       <div onClick={hideError}>{error && `Error: ${error}`}</div>
 
-      <ul>
+      <ul className="p-4 shadow-2xl rounded-xl">
         {fruits.map((fruit) => (
           <li key={fruit.id}>
             <button
