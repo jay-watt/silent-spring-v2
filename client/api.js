@@ -35,6 +35,20 @@ export function deleteFruit(id, token) {
     .catch(logError)
 }
 
+export function updateUser(user, token) {
+  return request
+    .post('/api/v1/users')
+    .set('authorization', `Bearer ${token}`)
+    .send(user)
+}
+
+export function getUser(token) {
+  return request
+    .get('/api/v1/users')
+    .set('authorization', `Bearer ${token}`)
+    .then((res) => res.body)
+}
+
 function logError(err) {
   if (err.response.text === 'Username Taken') {
     throw new Error('Username already taken - please choose another')

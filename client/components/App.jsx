@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import Nav from './Nav'
 import Fruits from './Fruits'
+import Profile from './Profile'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Fruits />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   )
