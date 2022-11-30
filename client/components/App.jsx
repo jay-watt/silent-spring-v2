@@ -9,10 +9,12 @@ function App() {
   return (
     <>
       <Nav />
-      <Routes>
-        <Route path="/" element={<Fruits />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
+      <main className="p-4">
+        <Routes>
+          <Route path="/" element={<Fruits />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </main>
     </>
   )
 }
