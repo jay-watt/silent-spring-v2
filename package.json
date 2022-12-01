@@ -39,7 +39,12 @@
     "express-jwt-authz": "^2.4.1",
     "jwks-rsa": "^2.0.4",
     "knex": "^1.0.1",
-    "react-redux": "^7.2.5"
+    "react-redux": "^7.2.5",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-scripts": "3.3.1",
+    "react-three-fiber": "4.0.14",
+    "three": "0.113.2"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",
