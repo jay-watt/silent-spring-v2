@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 
 import Box from './Box'
+import Controls from './Controls'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Box position={[1.2, 0, 0]} />
           <Box position={[3.6, 2.4, 0]} />
           <Box position={[5.9, 6.0, 1.0]} />
-          <OrbitControls />
+          <Controls />
         </Canvas>
       </main>
     </>
