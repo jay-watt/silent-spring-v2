@@ -3,7 +3,7 @@ import React from 'react'
 function Wait() {
   return (
     <>
-      <h1>Press Space Bar to Start</h1>
+      <h1>Double-Click Here to Start</h1>
     </>
   )
 }

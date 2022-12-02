@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import Sound from './Sound'
 
-function Box(props) {
+function Box() {
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef()
   // Hold state for hovered and clicked events
@@ -20,7 +20,7 @@ function Box(props) {
 
   return (
     <mesh
-      {...props}
+      // {...props}
       ref={ref}
       scale={clicked ? 1.5 : 1}
       onClick={() => click(!clicked)}

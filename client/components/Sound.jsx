@@ -3,8 +3,7 @@ import React, { useRef, useEffect, useState, useCallback } from 'react'
 import { useThree, useLoader } from '@react-three/fiber'
 
 function Sound({ url }) {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const isMounted = useRef(true)
+  // const [isPlaying, setIsPlaying] = useState(false)
 
   const sound = useRef()
   const { camera } = useThree()
@@ -16,9 +15,9 @@ function Sound({ url }) {
   const [listener] = useState(() => new THREE.AudioListener())
   const buffer = useLoader(THREE.AudioLoader, url)
 
-  function handleSpaceBar() {
-    setIsPlaying(true)
-  }
+  // function handleSpaceBar() {
+  //   setIsPlaying(true)
+  // }
 
   useEffect(() => {
     sound.current.setBuffer(buffer)
@@ -32,11 +31,7 @@ function Sound({ url }) {
     }
   }, [])
 
-  return (
-    <group onKeyPress={handleSpaceBar}>
-      <positionalAudio ref={sound} args={[listener]} />
-    </group>
-  )
+  return <positionalAudio ref={sound} args={[listener]} />
 }
 
 export default Sound
