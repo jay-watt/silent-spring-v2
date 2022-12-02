@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react'
-// import { useFrame } from '@react-three/fiber'
 
+import React, { useRef, useState } from 'react'
+import { useFrame } from '@react-three/fiber'
+import Sound from './Sound'
 
 function BoxTest(props) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -11,15 +12,22 @@ function BoxTest(props) {
   // // Subscribe this component to the render-loop, rotate the mesh every frame
   // useFrame((state, delta) => (ref.current.rotation.x += delta))
   // Return the view, these are regular Threejs elements expressed in JSX
+
+
+  const audioUrl = `./server/public/audio/${props.data.ML_Catalog_Number}.mp3`
+  console.log(props.data.ML_Catalog_Number)
+
   return (
     <mesh
       ref={ref}
       scale={clicked ? 1.5 : 1}
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
-      onPointerOut={() => hover(false)}>
+      onPointerOut={() => hover(false)}
+    >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+      <Sound url={audioUrl} />
     </mesh>
   )
 }
