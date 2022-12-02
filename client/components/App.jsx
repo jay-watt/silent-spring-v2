@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import { Canvas, extend } from '@react-three/fiber'
+import { extend } from '@react-three/fiber'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-
-import Box from './Box'
-import Controls from './Controls'
 import Wait from './Wait'
 import List from './List'
 
