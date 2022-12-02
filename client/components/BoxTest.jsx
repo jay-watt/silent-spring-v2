@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
-import { useFrame } from '@react-three/fiber'
+// import { useFrame } from '@react-three/fiber'
 
 
-function Box(props) {
+function BoxTest(props) {
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef()
   // Hold state for hovered and clicked events
@@ -13,7 +13,6 @@ function Box(props) {
   // Return the view, these are regular Threejs elements expressed in JSX
   return (
     <mesh
-      {...props}
       ref={ref}
       scale={clicked ? 1.5 : 1}
       onClick={() => click(!clicked)}
@@ -25,4 +24,4 @@ function Box(props) {
   )
 }
 
-export default Box
+export default BoxTest
