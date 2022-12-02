@@ -9,7 +9,7 @@ import Wait from './Wait'
 function App() {
   const [isPlaying, setIsPlaying] = useState(false)
 
-  function handleSpaceBar() {
+  function handleStart() {
     setIsPlaying(true)
   }
 
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <div onDoubleClick={handleSpaceBar}>
+      <div onDoubleClick={handleStart}>
         {isPlaying ? (
           <main className="flex items-center justify-center h-screen bg-violet-300	">
             <Canvas>
