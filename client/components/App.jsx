@@ -1,11 +1,12 @@
 import React from 'react'
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { Canvas, extend } from '@react-three/fiber'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 import Box from './Box'
 import Controls from './Controls'
 
 function App() {
+  extend({ OrbitControls })
   return (
     <>
       <main className="flex items-center justify-center h-screen bg-violet-300	">

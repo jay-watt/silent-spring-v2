@@ -11,6 +11,13 @@ function Box(props) {
   // // Subscribe this component to the render-loop, rotate the mesh every frame
   // useFrame((state, delta) => (ref.current.rotation.x += delta))
   // Return the view, these are regular Threejs elements expressed in JSX
+
+  function getRandomInt() {
+    return Math.floor(Math.random() * 15 + 1)
+  }
+
+  const randomInt = getRandomInt()
+
   return (
     <mesh
       {...props}
@@ -22,7 +29,7 @@ function Box(props) {
     >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-      <Sound url="./server/public/audio/1.mp3" />
+      <Sound url={`./server/public/audio/${randomInt}.mp3`} />
     </mesh>
   )
 }
