@@ -1,26 +1,24 @@
+/* eslint-disable react/no-unknown-property */
 import React, { useRef, useState } from 'react'
-import { useFrame } from '@react-three/fiber'
+// import { useFrame } from '@react-three/fiber'
 import Sound from './Sound'
 
-function Box(props) {
+function BoxTest(props) {
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef()
   // Hold state for hovered and clicked events
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
-  // // Subscribe this component to the render-loop, rotate the mesh every frame
+  // Subscribe this component to the render-loop, rotate the mesh every frame
   // useFrame((state, delta) => (ref.current.rotation.x += delta))
   // Return the view, these are regular Threejs elements expressed in JSX
 
-  function getRandomInt() {
-    return Math.floor(Math.random() * 15 + 1)
-  }
-
-  const randomInt = getRandomInt()
+  const audioUrl = `./server/public/audio/${props.data.ML_Catalog_Number}.mp3`
+  console.log(audioUrl)
 
   return (
     <mesh
-      {...props}
+      position={props.position}
       ref={ref}
       scale={clicked ? 1.5 : 1}
       onClick={() => click(!clicked)}
@@ -29,9 +27,9 @@ function Box(props) {
     >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
-      <Sound url={`./server/public/audio/${randomInt}.mp3`} />
+      <Sound url={audioUrl} />
     </mesh>
   )
 }
 
-export default Box
+export default BoxTest
