@@ -15,7 +15,9 @@ function App() {
 
   return (
     <>
-      <div onDoubleClick={handleStart}>{isPlaying ? <List /> : <Wait />}</div>
+      <div onDoubleClick={handleStart} className="mainDiv">
+        {isPlaying ? <List /> : <Wait />}
+      </div>
     </>
   )
 }
