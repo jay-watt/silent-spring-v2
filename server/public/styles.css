@@ -27,10 +27,11 @@ body {
   flex-direction: column;
   width: 20%;
   margin: 0 auto;
+  margin-top: 120px;
   padding: 20px 0;
   font-family: 'Noticia Text', serif;
-  color: rgb(126, 99, 151);
+  color: rgb(184, 147, 219);
   text-align: center;
-  background-color: #281e2d;
+  background-color: rgba(138, 117, 173, 0.5);
 }
 
