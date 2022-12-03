@@ -7,14 +7,10 @@ import List from './List'
 function App() {
   const [isPlaying, setIsPlaying] = useState(false)
 
-  function handleStart() {
-    setIsPlaying(true)
-  }
-
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
-        setIsPlaying(false)
+        document.location.reload(false)
       }
     }
     document.addEventListener('keydown', handleEsc)
