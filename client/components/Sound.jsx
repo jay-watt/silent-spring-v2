@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import * as THREE from 'three'
 import React, { useRef, useEffect, useState } from 'react'
 import { useThree, useLoader } from '@react-three/fiber'
@@ -10,7 +11,9 @@ function Sound({ url }) {
 
   useEffect(() => {
     sound.current.setBuffer(buffer)
-    sound.current.setRefDistance(1)
+    sound.current.setRefDistance(5)
+    sound.current.setRolloffFactor(1)
+    sound.current.setVolume(0.1)
     sound.current.setLoop(true)
     sound.current.play()
     camera.add(listener)
