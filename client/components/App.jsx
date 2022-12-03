@@ -24,13 +24,24 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    const handleEnter = (event) => {
+      if (event.keyCode === 13) {
+        setIsPlaying(true)
+      }
+    }
+    document.addEventListener('keydown', handleEnter)
+
+    return () => {
+      document.removeEventListener('keydown', handleEnter)
+    }
+  }, [])
+
   extend({ OrbitControls })
 
   return (
     <>
-      <div onClick={handleStart} className="mainDiv">
-        {isPlaying ? <List /> : <Wait />}
-      </div>
+      <div className="mainDiv">{isPlaying ? <List /> : <Wait />}</div>
     </>
   )
 }
