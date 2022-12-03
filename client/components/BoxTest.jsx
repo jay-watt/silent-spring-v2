@@ -26,7 +26,7 @@ function BoxTest(props) {
       onPointerOut={() => hover(false)}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+      <meshStandardMaterial color={hovered ? 'hotpink' : 'purple'} />
       <Sound url={audioUrl} />
     </mesh>
   )
