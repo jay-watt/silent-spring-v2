@@ -5,7 +5,7 @@ body,
   width: 100%;
   padding: 0;
   margin: 0;
-  background: #272730;
+  background: #281e2d;
 }
 
 #app {
@@ -13,6 +13,22 @@ body,
   height: 100% !important;
 }
 
-.mainDiv {
-  height: 100%
+body {
+  font-family: 'Noticia Text', serif;
 }
+
+.mainDiv {
+  height: 100%;
+  
+}
+
+.container {
+  flex: auto;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-family: 'Noticia Text', serif;
+
+}
+
