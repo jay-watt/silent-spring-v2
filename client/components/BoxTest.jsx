@@ -1,9 +1,12 @@
 /* eslint-disable react/no-unknown-property */
 import React, { useRef, useState } from 'react'
-// import { useFrame } from '@react-three/fiber'
+import { Text } from 'troika-three-text'
+import { extend } from '@react-three/fiber'
 import Sound from './Sound'
+import Banner from './Banner'
 
 function BoxTest(props) {
+  extend({ Text })
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef()
   // Hold state for hovered and clicked events
@@ -28,6 +31,7 @@ function BoxTest(props) {
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'purple'} />
       <Sound url={audioUrl} />
+      <Banner text={'whatever'} />
     </mesh>
   )
 }
