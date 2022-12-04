@@ -11,27 +11,32 @@ function BoxTest(props) {
   const ref = useRef()
   // Hold state for hovered and clicked events
   const [hovered, hover] = useState(false)
-  const [clicked, click] = useState(false)
+  const [clicked, setClicked] = useState(false)
   // Subscribe this component to the render-loop, rotate the mesh every frame
   // useFrame((state, delta) => (ref.current.rotation.x += delta))
   // Return the view, these are regular Threejs elements expressed in JSX
 
+  function handleClick(event) {
+    event.preventDefault()
+    setClicked(!clicked)
+  }
+
   const audioUrl = `./server/public/audio/${props.data.ML_Catalog_Number}.mp3`
-  console.log(audioUrl)
 
   return (
     <mesh
       position={props.position}
       ref={ref}
       scale={clicked ? 1.5 : 1}
-      onClick={() => click(!clicked)}
+      onClick={handleClick}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}
     >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'purple'} />
-      <Sound url={audioUrl} />
-      <Banner text={'whatever'} />
+      <Sound url={audioUrl} vol={clicked ? 0.1 : 1}/>
+          {clicked ?
+          <Banner text={'whatever'} />}
     </mesh>
   )
 }
