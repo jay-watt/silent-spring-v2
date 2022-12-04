@@ -34,9 +34,8 @@ function BoxTest(props) {
     >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'purple'} />
-      <Sound url={audioUrl} vol={clicked ? 0.1 : 1}/>
-          {clicked ?
-          <Banner text={'whatever'} />}
+      <Sound url={audioUrl} />
+      <Banner text={'whatever'} />
     </mesh>
   )
 }
