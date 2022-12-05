@@ -4,7 +4,6 @@ import React, { useRef, useState } from 'react'
 import Sound from './Sound'
 import Banner from './Banner'
 
-
 function Bird(props) {
   // This reference gives us direct access to the THREE.Mesh object
   const bird = useRef()
@@ -13,7 +12,7 @@ function Bird(props) {
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
 
-  const audioUrl = `./server/public/audio/${props.data.ML_Catalog_Number}.mp3`
+  const audioUrl = `./server/public/audio/${props.data.Sound_Id}.mp3`
 
   return (
     <mesh

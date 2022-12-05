@@ -1,13 +1,14 @@
 exports.up = (knex) => {
   return knex.schema.createTable('birds', (table) => {
     table.increments('id')
-    table.integer('ML_Catalog_Number')
-    table.string('Common_Name')
-    table.string('Scientific_Name')
+    table.string('Sound_Id')
+    table.string('Te_Reo')
+    table.string('English_Name')
     table.string('Country')
-    table.string('State')
-    table.string('Locality')
-    table.string('Media_notes')
+    table.integer('Status')
+    table.string('Habitat')
+    table.string('Media_Notes')
+    table.string('Sound_Credit')
   })
 }
 
