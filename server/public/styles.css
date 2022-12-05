@@ -1,25 +1,18 @@
 html,
 body,
-#root {
+#root,
+.mainDiv,
+#app {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
-  background: #281e2d;
+  background: #281e2d !important;
 }
 
-#app {
-  width: 100% !important;
-  height: 100% !important;
-}
 
 body {
   font-family: 'Noticia Text', serif;
-}
-
-.mainDiv {
-  height: 100%;
-  
 }
 
 .container {
