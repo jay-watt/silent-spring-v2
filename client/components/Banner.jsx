@@ -4,48 +4,40 @@ import fonts from './fonts'
 // import { useThree } from '@react-three/fiber'
 // import * as THREE from 'three'
 
-function Banner({ text }) {
+
+function Banner({ data }) {
   const ref = useRef()
-
-  // const { camera } = useThree()
-  // let rotation = camera.rotation
-  // const startingVec = new THREE.Vector3();
-  // const startingRotate = camera.getWorldDirection(startingVec)
-  // const startingRotation = [startingRotate.x, startingRotate.y, startingRotate.z]
-
-  // const [rotation, setRotation] = useState(startingRotation)
-  // function getNewRotation() {
-  //   const vec = new THREE.Vector3();
-  //   const rotate = camera.getWorldDirection(vec)
-  //   return [rotate.x, rotate.y, rotate.z]
-  // }
-  // useEffect(() => {
-  //   setRotation(newRotation)
-  //   console.log('setting rotation')
-  // }, [camera.projectionMatrix])
-
 
   const opts = {
     font: 'Philosopher',
-    fontSize: 1,
+    fontSize: 0.2,
     color: '#99ccff',
     position: [0, 2, 0.5],
     lineHeight: 1,
     letterSpacing: 0,
     textAlign: 'justify',
     anchorX: 'center',
-    // rotateX: rotation[0],
-    // rotateY: rotation[1],
-    // rotateZ: rotation[2]
+
   }
+
+  let text1 = ''
+
+  Object.keys(data).map((propertyName) => {
+    if (data[propertyName].length > 0) {
+      text1 = text1 + `${propertyName}: ${data[propertyName]}\n`
+    }
+  })
+
   return (
+
     <text
       ref={ref}
-      text={text}
+      text={text1}
       {...opts}
       localRotation={[100, 0, 0]}
       font={fonts[opts.font]}
     />
+
   )
 }
 
