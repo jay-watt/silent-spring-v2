@@ -4,7 +4,6 @@ import fonts from './fonts'
 // import { useThree } from '@react-three/fiber'
 // import * as THREE from 'three'
 
-
 function Banner({ data }) {
   const ref = useRef()
 
@@ -13,11 +12,11 @@ function Banner({ data }) {
     fontSize: 0.2,
     color: '#99ccff',
     position: [0, 2, 0.5],
+    maxWidth: 5,
     lineHeight: 1,
     letterSpacing: 0,
     textAlign: 'justify',
     anchorX: 'center',
-
   }
 
   let text1 = ''
@@ -29,7 +28,6 @@ function Banner({ data }) {
   })
 
   return (
-
     <text
       ref={ref}
       text={text1}
@@ -37,7 +35,6 @@ function Banner({ data }) {
       localRotation={[100, 0, 0]}
       font={fonts[opts.font]}
     />
-
   )
 }
 
