@@ -36,9 +36,7 @@ function App() {
 
   extend({ OrbitControls })
 
-  return (
-    <div className="mainDiv">{isPlaying ? <Birds /> : <Wait />}</div>
-  )
+  return <div className="mainDiv">{isPlaying ? <Birds /> : <Wait />}</div>
 }
 
 export default App
