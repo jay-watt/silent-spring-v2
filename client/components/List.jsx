@@ -23,8 +23,8 @@ function List() {
 
   function getRandomCoords() {
     const x = getRandomInt(40)
-    const y = getRandomInt(15)
-    const z = getRandomInt(10)
+    const y = getRandomInt(20)
+    const z = getRandomInt(0)
     return [x, y, z]
   }
 
@@ -32,7 +32,7 @@ function List() {
     <>
       {data.length > 0 ? (
         <Suspense fallback={null}>
-          <Canvas camera={{ position: [0, 0, 15] }}>
+          <Canvas camera={{ position: [0, 0, 5] }}>
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.95} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
