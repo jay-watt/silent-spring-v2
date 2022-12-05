@@ -28,11 +28,12 @@ function List() {
     return [x, y, z]
   }
 
+
   return (
     <>
       {data.length > 0 ? (
         <Suspense fallback={null}>
-          <Canvas camera={{ position: [0, 0, 5] }}>
+          <Canvas camera={{ position: [0, 0, 5] }} >
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.95} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
