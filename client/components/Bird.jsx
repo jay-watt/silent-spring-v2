@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react'
 
 import Sound from './Sound'
-import Banner from './Banner'
+import Info from './Info'
 
 function Bird({ position, data }) {
   const bird = useRef()
@@ -24,7 +24,7 @@ function Bird({ position, data }) {
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'purple'} />
       <Sound url={audioUrl} />
-      {clicked && <Banner data={data} />}
+      {clicked && <Info data={data} />}
     </mesh>
   )
 }

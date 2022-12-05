@@ -18,15 +18,15 @@ function Controls() {
   //   controls.current.update()
   // })
 
-  controls.movementSpeed = 700
-  controls.lookSpeed = 0.05
-  // controls.noFly = true
-  // controls.lookVertical = false;
 
 
   return (
     <FirstPersonControls
       ref={controls}
+      activeLook={true}
+      movementSpeed={20}
+      lookSpeed={0.05}
+      noFly={true}
       // target={controls.target}
       // enableDamping
       args={[camera, gl.domElement]}
