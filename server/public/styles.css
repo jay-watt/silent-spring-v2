@@ -35,3 +35,9 @@ body {
   background-color: rgba(138, 117, 173, 0.5);
 }
 
+.info {
+  font-family: 'Noticia Text', serif;
+  color: rgb(184, 147, 219);
+  font-size: 200px;
+}
+
