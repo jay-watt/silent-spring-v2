@@ -1,17 +1,25 @@
 import React, { useRef } from 'react'
-import { useThree, useFrame } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { useThree, useFrame, extend } from '@react-three/fiber'
+import { FirstPersonControls } from '@react-three/drei'
 
 function Controls() {
-
+  extend({ FirstPersonControls })
   const { camera, gl } = useThree()
   const controls = useRef()
-  useFrame(() => controls.current.update())
+
+  useFrame(({ clock }) => {
+    const delta = clock.getDelta()
+    controls.current.update(delta)
+  })
+
   return (
-    <OrbitControls
+    <FirstPersonControls
       ref={controls}
+      activeLook={true}
+      movementSpeed={20}
+      lookSpeed={0.05}
+      noFly={true}
       target={controls.target}
-      enableDamping
       args={[camera, gl.domElement]}
     />
   )
