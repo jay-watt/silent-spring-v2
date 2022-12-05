@@ -1,9 +1,8 @@
 const path = require('path')
 const express = require('express')
 
-const birdsRoutes = require('./routes/birds')
-
 const server = express()
+const birdsRoutes = require('./routes/birds')
 
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
