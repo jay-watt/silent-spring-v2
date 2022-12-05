@@ -35,7 +35,7 @@ function BoxTest(props) {
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'purple'} />
       <Sound url={audioUrl} />
-      <Banner text={'whatever'} />
+      <Banner data={props.data} />
     </mesh>
   )
 }

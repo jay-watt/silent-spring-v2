@@ -22,8 +22,8 @@ function List() {
   }
 
   function getRandomCoords() {
-    const x = getRandomInt(0)
-    const y = getRandomInt(0)
+    const x = getRandomInt(40)
+    const y = getRandomInt(20)
     const z = getRandomInt(0)
     return [x, y, z]
   }
@@ -36,16 +36,14 @@ function List() {
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.95} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
-            {data.map((data, idx) => {
-              if (idx == 1) {
-                return (
-                  <BoxTest
-                    key={data.id}
-                    position={getRandomCoords()}
-                    data={data}
-                  />
-                )
-              }
+            {data.map((data) => {
+              return (
+                <BoxTest
+                  key={data.id}
+                  position={getRandomCoords()}
+                  data={data}
+                />
+              )
             })}
             <Controls />
           </Canvas>

@@ -2,26 +2,28 @@
 import React from 'react'
 import fonts from './fonts'
 
-function Banner({ text }) {
+function Banner({ data }) {
   const opts = {
     font: 'Philosopher',
-    fontSize: 12,
+    fontSize: 0.2,
     color: '#99ccff',
-    maxWidth: 300,
+    maxWidth: 5,
     lineHeight: 1,
     letterSpacing: 0,
     textAlign: 'justify',
+    position: [1, -1, 1],
   }
+
+  let text1 = ''
+
+  Object.keys(data).map((propertyName) => {
+    if (data[propertyName].length > 0) {
+      text1 = text1 + `${propertyName}: ${data[propertyName]}\n`
+    }
+  })
+
   return (
-    <text
-      text={text}
-      {...opts}
-      font={fonts[opts.font]}
-      anchorX="center"
-      anchorY="middle"
-    >
-      <meshPhongMaterial attach="material" color="hotpink" />
-    </text>
+    <text text={text1} {...opts} font={fonts[opts.font]} anchorX="center" />
   )
 }
 
