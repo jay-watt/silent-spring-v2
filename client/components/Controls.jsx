@@ -10,7 +10,6 @@ function Controls() {
   return (
     <OrbitControls
       ref={controls}
-      // target={[0, 0, 0]}
       target={controls.target}
       enableDamping
       args={[camera, gl.domElement]}

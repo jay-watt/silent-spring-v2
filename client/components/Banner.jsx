@@ -3,7 +3,6 @@ import React from 'react'
 import { Html } from '@react-three/drei'
 
 function Banner({ data }) {
-
   let text = ''
 
   Object.keys(data).map((propertyName) => {

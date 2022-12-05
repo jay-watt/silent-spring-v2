@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { extend } from '@react-three/fiber'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+
 import Wait from './Wait'
 import List from './List'
 
@@ -36,9 +37,7 @@ function App() {
   extend({ OrbitControls })
 
   return (
-    <>
-      <div className="mainDiv">{isPlaying ? <List /> : <Wait />}</div>
-    </>
+    <div className="mainDiv">{isPlaying ? <List /> : <Wait />}</div>
   )
 }
 
