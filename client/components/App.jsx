@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { extend } from '@react-three/fiber'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { PointerLockControls, FirstPersonControls } from '@react-three/drei'
+// import { OrbitControls } from '@react-three/drei'
 
 import Wait from './Wait'
 import Birds from './Birds'
@@ -34,7 +35,8 @@ function App() {
     }
   }, [])
 
-  extend({ OrbitControls })
+
+  // extend({ OrbitControls })
 
   return (
     <div className="mainDiv">{isPlaying ? <Birds /> : <Wait />}</div>
