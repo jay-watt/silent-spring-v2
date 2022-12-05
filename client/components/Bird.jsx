@@ -4,20 +4,18 @@ import React, { useRef, useState } from 'react'
 import Sound from './Sound'
 import Banner from './Banner'
 
-function Bird(props) {
-  // This reference gives us direct access to the THREE.Mesh object
+function Bird({ position, data }) {
   const bird = useRef()
 
-  // Hold state for hovered and clicked events
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
 
-  const audioUrl = `./server/public/audio/${props.data.Sound_Id}.mp3`
+  const audioUrl = `./server/public/audio/${data.Sound_Id}.mp3`
 
   return (
     <mesh
       ref={bird}
-      position={props.position}
+      position={position}
       scale={hovered ? 1.1 : 1}
       onClick={clicked ? () => click(false) : () => click(true)}
       onPointerOver={() => hover(true)}
@@ -26,7 +24,7 @@ function Bird(props) {
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'purple'} />
       <Sound url={audioUrl} />
-      {clicked && <Banner data={props.data} />}
+      {clicked && <Banner data={data} />}
     </mesh>
   )
 }

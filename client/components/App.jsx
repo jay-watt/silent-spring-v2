@@ -3,7 +3,7 @@ import { extend } from '@react-three/fiber'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 import Wait from './Wait'
-import List from './List'
+import Birds from './Birds'
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -37,7 +37,7 @@ function App() {
   extend({ OrbitControls })
 
   return (
-    <div className="mainDiv">{isPlaying ? <List /> : <Wait />}</div>
+    <div className="mainDiv">{isPlaying ? <Birds /> : <Wait />}</div>
   )
 }
 

@@ -6,7 +6,7 @@ import Bird from './Bird'
 import Controls from './Controls'
 import { fetchBirds } from '../api'
 
-function List() {
+function Birds() {
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -54,4 +54,4 @@ function List() {
     </>
   )
 }
-export default List
+export default Birds
