@@ -18,7 +18,7 @@ exports.seed = (knex) => {
         },
         {
           id: 2,
-          Sound_Id: '2pateke',
+          Sound_Id: 'We Used To Be Friends',
           Te_Reo: 'Pāteke',
           English_Name: 'Brown Teal',
           Country: 'Aotearoa',
@@ -435,7 +435,7 @@ exports.seed = (knex) => {
         },
         {
           id: 36,
-          Sound_Id: '36kakapo',
+          Sound_Id: 'Okay Kaya - Damn, Gravity',
           Te_Reo: 'Kākāpō',
           English_Name: 'Kakapo',
           Country: 'Aotearoa',
