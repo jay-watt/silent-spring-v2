@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import Wait from './Wait'
 import Birds from './Birds'
+import Wait from './Wait'
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false)
