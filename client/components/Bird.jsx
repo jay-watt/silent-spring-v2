@@ -10,14 +10,18 @@ function Bird({ position, data }) {
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
   const [remove, setRemove] = useState(false)
+  const [audioUrl, setAudioUrl] = useState(
+    `./server/public/audio/${data.Sound_Id}.mp3`
+  )
 
-  const audioUrl = `./server/public/audio/${data.Sound_Id}.mp3`
+  // const audioUrl = `./server/public/audio/${data.Sound_Id}.mp3`
 
   useEffect(() => {
     const handleRemove = (event) => {
       console.log(event.key)
       if (event.key === ' ') {
         setRemove(!remove)
+        setAudioUrl('./server/public/audio/silent.mp3')
       }
     }
     document.addEventListener('keydown', handleRemove)
@@ -27,8 +31,13 @@ function Bird({ position, data }) {
     }
   })
 
+  // function killSound(sound) {
+  //   sound.current.stop()
+  //   sound.current = null
+  // }
+
   return (
-    remove && (
+    !remove && (
       <mesh
         ref={bird}
         position={position}

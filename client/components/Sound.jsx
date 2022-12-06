@@ -13,7 +13,7 @@ function Sound({ url }) {
     sound.current.setBuffer(buffer)
     sound.current.setRefDistance(5)
     sound.current.setRolloffFactor(1)
-    sound.current.setVolume(0.1)
+    sound.current.setVolume(1)
     sound.current.setLoop(true)
     sound.current.play()
     camera.add(listener)
