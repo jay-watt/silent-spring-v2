@@ -21,10 +21,13 @@ function Info({ data }) {
   pickName()
 
   return (
-    <Html className="info" distanceFactor={2} position={[0, 2, 0]}>
-      <h3>{birdName}</h3>
-      <p>{data.Media_Notes}</p>
-      <p>{data.Sound_Credit}</p>
+    <Html distanceFactor={2} position={[0, 2, 0]}>
+      <div className="info">
+        {' '}
+        <h3>{birdName}</h3>
+        <p>{data.Media_Notes}</p>
+        <p>{data.Sound_Credit}</p>
+      </div>
     </Html>
   )
 }

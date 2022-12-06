@@ -29,17 +29,17 @@ body {
 }
 
 .info {
+  min-width: 1000px;
+  height: 100%;
   font-family: 'Noticia Text', serif;
   color: rgb(184, 147, 219);
   font-size: 100px;
-  display: box; 
+  display: block;
+  flex-direction: column; 
   background: rgba(244, 207, 242, 0.1);
   box-shadow: 5px 5px 15px rgbrgba(138, 117, 173, 0.5);
-  padding: 100px;
-  margin: 100px;
-  padding-top: 60px;
-  margin-top: 60px;
 
   
+  padding: 0 60px;
 }
 
