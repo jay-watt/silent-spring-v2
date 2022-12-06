@@ -29,7 +29,7 @@ function Birds() {
   return (
     <>
       {data.length > 0 ? (
-        <Canvas camera={{ position: [0, 0, 100] }}>
+        <Canvas camera={{ position: [0, 0, 50] }}>
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.95} penumbra={1} />
           <pointLight position={[-10, -10, -10]} />
