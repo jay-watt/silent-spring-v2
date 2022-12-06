@@ -33,7 +33,7 @@ function Sound({ url, visible, vol }) {
     const intervalId = setInterval(function () {
       let fadeVol = (vol / steps) * counter
       audio.setVolume(fadeVol)
-      counter = inBool ? counter++ : counter--
+      inBool ? counter++ : counter--
       if (counter === (inBool ? steps : 0)) {
         clearInterval(intervalId)
         if (!inBool) sound.current.stop()
