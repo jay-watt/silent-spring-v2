@@ -21,17 +21,10 @@ function Birds() {
     return Math.floor((Math.random() - 0.5) * max + 1)
   }
 
-  // function getRandomCoords() {
-  //   const x = getRandomInt(200)
-  //   const y = getRandomInt(100)
-  //   const z = getRandomInt(100)
-  //   return [x, y, z]
-  // }
-
   function getRandomCoords() {
-    const x = getRandomInt(0)
-    const y = getRandomInt(0)
-    const z = getRandomInt(0)
+    const x = getRandomInt(20)
+    const y = getRandomInt(10)
+    const z = getRandomInt(10)
     return [x, y, z]
   }
 
@@ -48,7 +41,6 @@ function Birds() {
                 <Bird key={data.id} position={getRandomCoords()} data={data} />
               )
             }
-
           })}
           <Controls />
         </Canvas>
