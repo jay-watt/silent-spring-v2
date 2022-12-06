@@ -379,7 +379,7 @@ exports.seed = (knex) => {
           Media_Notes:
             'Group of birds around small lake, Mount Cook, January 1982',
           Sound_Credit:
-            'Les McPherson, McPherson Natural history unit sound archive',
+            'Les McPherson, McPherson Natural history unit sound archive.',
         },
         {
           id: 32,
@@ -392,7 +392,7 @@ exports.seed = (knex) => {
           Media_Notes:
             'Birds calling from tidal rock pool, Rangatira Island, Chatham Islands, October 1987',
           Sound_Credit:
-            'Ron Nilsson, McPherson Natural history unit sound archive',
+            'Ron Nilsson, McPherson Natural history unit sound archive.',
         },
         {
           id: 33,
@@ -405,7 +405,7 @@ exports.seed = (knex) => {
           Media_Notes:
             'Flight calls while hawking insects, Lake Georgia South Austrailia',
           Sound_Credit:
-            'Harold and Audrey Couch, McPherson Natural history unit sound archive',
+            'Harold and Audrey Couch, McPherson Natural history unit sound archive.',
         },
         {
           id: 34,
@@ -418,7 +418,7 @@ exports.seed = (knex) => {
           Media_Notes:
             "In a burrow, Ile de l'est Crozet Islands, November 1982",
           Sound_Credit:
-            'P. Frigola, McPherson Natural history unit sound archive',
+            'P. Frigola, McPherson Natural history unit sound archive.',
         },
         {
           id: 35,
@@ -431,7 +431,7 @@ exports.seed = (knex) => {
           Media_Notes:
             'Feeding sequence at nest, Okarito Colony, Waitangiroto River, January 1973',
           Sound_Credit:
-            'Les McPherson, McPherson Natural history unit sound archive',
+            'Les McPherson, McPherson Natural history unit sound archive.',
         },
         {
           id: 36,
@@ -444,7 +444,7 @@ exports.seed = (knex) => {
           Media_Notes:
             'Booming and Chinging, Arena Ridge, Stewart Island, January 1985',
           Sound_Credit:
-            'Ralph Polsted, McPherson Natural history unit sound archive',
+            'Ralph Polsted, McPherson Natural history unit sound archive.',
         },
       ])
     })
