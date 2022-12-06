@@ -90,7 +90,7 @@ exports.seed = (knex) => {
           English_Name: 'Antipodean Albatross',
           Country: 'Aotearoa',
           Status: 3,
-          Sound_Level: 8, 
+          Sound_Level: 8,
           Habitat:
             'Breeding: Chatham Islands/ Not breeding: Southern Antarctic Ocean',
           Media_Notes: 'Feeding chick at nest, Auckland Islands, November 1989',
@@ -401,7 +401,7 @@ exports.seed = (knex) => {
           English_Name: 'Black stilt',
           Country: 'Aotearoa',
           Status: 4,
-          Sound_Level: 8, 
+          Sound_Level: 8,
           Habitat: 'Wetlands, riverbeds',
           Media_Notes:
             'Group of birds around small lake, Mount Cook, January 1982.',
@@ -438,7 +438,7 @@ exports.seed = (knex) => {
         },
         {
           id: 34,
-          Sound_Id: '34kuaka-whanua-hou',
+          Sound_Id: '34kuaka-whenua-hou',
           Te_Reo: 'Kuaka Whenua Hou',
           English_Name: 'Whenua Hou diving petrel',
           Country: 'Aotearoa',

@@ -2,7 +2,6 @@
 import * as THREE from 'three'
 import React, { useRef, useEffect, useState } from 'react'
 import { useThree, useLoader } from '@react-three/fiber'
-// import useSound from 'use-sound'
 
 function Sound({ url, visible, vol }) {
   const sound = useRef()
@@ -34,9 +33,7 @@ function Sound({ url, visible, vol }) {
     const intervalId = setInterval(function () {
       let fadeVol = (vol / steps) * counter
       audio.setVolume(fadeVol)
-      // counter = inBool ? counter++ : counter--
-      counter--
-      console.log(counter)
+      counter = inBool ? counter++ : counter--
       if (counter === (inBool ? steps : 0)) {
         clearInterval(intervalId)
         if (!inBool) sound.current.stop()
