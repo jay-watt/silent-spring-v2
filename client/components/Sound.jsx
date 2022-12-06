@@ -2,6 +2,7 @@
 import * as THREE from 'three'
 import React, { useRef, useEffect, useState } from 'react'
 import { useThree, useLoader } from '@react-three/fiber'
+// import useSound from 'use-sound'
 
 function Sound({ url }) {
   const sound = useRef()
@@ -11,11 +12,11 @@ function Sound({ url }) {
 
   useEffect(() => {
     sound.current.setBuffer(buffer)
-    sound.current.setRefDistance(5)
-    sound.current.setRolloffFactor(1)
-    sound.current.setVolume(0.1)
+    sound.current.setRefDistance(4)
+    sound.current.setRolloffFactor(2)
+    sound.current.setVolume(3)
     sound.current.setLoop(true)
-    sound.current.play()
+    sound.current.play(1)
     camera.add(listener)
     return () => camera.remove(listener)
   }, [])

@@ -368,6 +368,7 @@ exports.seed = (knex) => {
           Sound_Credit:
             'https://nzbirdsonline.org.nz/sites/all/files/14%20Track%2014.mp3',
         },
+
         {
           id: 31,
           Sound_Id: '31kaki',
@@ -409,7 +410,7 @@ exports.seed = (knex) => {
         },
         {
           id: 34,
-          Sound_Id: '34kuaka-whanua-hou',
+          Sound_Id: '34kuaka-whenua-hou',
           Te_Reo: 'Kuaka Whenua Hou',
           English_Name: 'Whenua Hou diving petrel',
           Country: 'Aotearoa',
@@ -422,7 +423,7 @@ exports.seed = (knex) => {
         },
         {
           id: 35,
-          Sound_Id: '35kotuku',
+          Sound_Id: '35Kotuku',
           Te_Reo: 'Kōtuku ',
           English_Name: 'White Heron',
           Country: 'Aotearoa',
@@ -435,7 +436,7 @@ exports.seed = (knex) => {
         },
         {
           id: 36,
-          Sound_Id: '36kakapo',
+          Sound_Id: '36Kakapo',
           Te_Reo: 'Kākāpō',
           English_Name: 'Kakapo',
           Country: 'Aotearoa',
