@@ -10,6 +10,7 @@ exports.seed = (knex) => {
           English_Name: 'Fantail',
           Country: 'Aotearoa',
           Status: 1,
+          Sound_Level: 7,
           Habitat: 'Aotearoa',
           Media_Notes:
             'South Island fantail adult call (with goldfinches and sheep), Te Oka Bay Banks Peninsula, March 1970, 09.47.',
@@ -23,6 +24,7 @@ exports.seed = (knex) => {
           English_Name: 'Brown Teal',
           Country: 'Aotearoa',
           Status: 3,
+          Sound_Level: 7,
           Habitat: 'Wetlands',
           Media_Notes:
             'Calls by one bird. Elevation: 53 m. Date added to IBC: June 22, 2016.',
@@ -35,6 +37,7 @@ exports.seed = (knex) => {
           English_Name: 'Tui',
           Country: 'Aotearoa',
           Status: 1,
+          Sound_Level: 7,
           Habitat: 'Broadleaf forests',
           Media_Notes:
             'Single bird singing (redpolls in background), Andersons Park Invercargill, January 1984, 1600.',
@@ -48,6 +51,7 @@ exports.seed = (knex) => {
           English_Name: 'Swamphen',
           Country: 'Aotearoa',
           Status: 3,
+          Sound_Level: 8,
           Habitat: 'Grasslands',
           Media_Notes: '',
           Sound_Credit: 'Alex Berryman, Macauley Library.',
@@ -59,6 +63,7 @@ exports.seed = (knex) => {
           English_Name: 'NZ Wood Pigeon',
           Country: 'Aotearoa',
           Status: 1,
+          Sound_Level: 9,
           Habitat: 'Forest',
           Media_Notes:
             'Wingbeats from one of 4 fighting/displaying adults, Te Anau, October 2012, 6.35am.',
@@ -72,6 +77,7 @@ exports.seed = (knex) => {
           English_Name: 'Black Petrel',
           Country: 'Aotearoa',
           Status: 3,
+          Sound_Level: 8,
           Habitat: 'Coast',
           Media_Notes:
             'Calls by a group of birds while feeding on chum. Recorded from a ship. Elevation: 0 m. Date added to IBC: June 22, 2016.',
@@ -84,6 +90,7 @@ exports.seed = (knex) => {
           English_Name: 'Antipodean Albatross',
           Country: 'Aotearoa',
           Status: 3,
+          Sound_Level: 8, 
           Habitat:
             'Breeding: Chatham Islands/ Not breeding: Southern Antarctic Ocean',
           Media_Notes: 'Feeding chick at nest, Auckland Islands, November 1989',
@@ -96,6 +103,7 @@ exports.seed = (knex) => {
           English_Name: 'Stitchbird',
           Country: 'Aotearoa',
           Status: 3,
+          Sound_Level: 8,
           Habitat: 'Forest',
           Media_Notes:
             'A female calling. Elevation: 53 m. Date added to IBC: June 22, 2016.',
@@ -108,6 +116,7 @@ exports.seed = (knex) => {
           English_Name: 'Black Swan ',
           Country: 'Aotearoa',
           Status: 1,
+          Sound_Level: 6,
           Habitat: 'Lakes, Larger constructed ponds, estauries',
           Media_Notes: 'Meola Reef, Westmere (Coastal Walkway)',
           Sound_Credit: 'Katie R, Macauley Library.',
@@ -119,6 +128,7 @@ exports.seed = (knex) => {
           English_Name: 'Australasian Swamphen',
           Country: 'Aotearoa',
           Status: 1,
+          Sound_Level: 10,
           Habitat: 'Wetlands',
           Media_Notes:
             'A bird calling. Elevation: 53 m. Date added to IBC: June 22, 2016.',
@@ -131,6 +141,7 @@ exports.seed = (knex) => {
           English_Name: 'Fernbird',
           Country: 'Aotearoa',
           Status: 3,
+          Sound_Level: 8,
           Habitat: 'Dense Wetlands',
           Media_Notes:
             'Calls by one bird. Elevation: 53 m. Date added to IBC: June 22, 2016.',
@@ -143,6 +154,7 @@ exports.seed = (knex) => {
           English_Name: 'Saddleback',
           Country: 'Aotearoa',
           Status: 2,
+          Sound_Level: 9,
           Habitat: 'Forest',
           Media_Notes:
             'Two birds alarmcalling. Elevation: 53 m. Date added to IBC: June 22, 2016.',
@@ -155,6 +167,7 @@ exports.seed = (knex) => {
           English_Name: 'Pied shag',
           Country: 'Aotearoa',
           Status: 2,
+          Sound_Level: 5,
           Habitat: 'Coastal marine waters',
           Media_Notes: 'Pied Shag colony with active nests, Orakei Basin.',
           Sound_Credit: 'Jim Kirker, Macauley Library.',
@@ -166,6 +179,7 @@ exports.seed = (knex) => {
           English_Name: 'Whitehead',
           Country: 'Aotearoa',
           Status: 1,
+          Sound_Level: 7,
           Habitat: 'Forest/shrubland',
           Media_Notes:
             'Several birds calling from bushes. Elevation: 53 m. Date added to IBC: June 22, 2016.',
@@ -178,6 +192,7 @@ exports.seed = (knex) => {
           English_Name: 'Little Shag',
           Country: 'Aotearoa',
           Status: 3,
+          Sound_Level: 8,
           Habitat: 'Coastal, Fresh water ',
           Media_Notes:
             'Small flock, taking off from the water at Harts Creek, Ellesmere, December 2012',
@@ -191,6 +206,7 @@ exports.seed = (knex) => {
           English_Name: 'Bellbird',
           Country: 'Aotearoa',
           Status: 1,
+          Sound_Level: 8,
           Habitat: 'Forest',
           Media_Notes: 'NOTES: 10 dB pad engaged on microphone.',
           Sound_Credit: 'Matthew D. Medler, Macauley Library.',
@@ -202,6 +218,7 @@ exports.seed = (knex) => {
           English_Name: 'Spotted Shag',
           Country: 'Aotearoa',
           Status: 3,
+          Sound_Level: 10,
           Habitat: 'Coastal ',
           Media_Notes:
             'Begging young, one adult at nest, Te Oka Bay Banks Peninsula, October 1970, 1535.',
@@ -215,6 +232,7 @@ exports.seed = (knex) => {
           English_Name: 'Morepork',
           Country: 'Aotearoa',
           Status: 1,
+          Sound_Level: 8,
           Habitat: 'Forest',
           Media_Notes: '',
           Sound_Credit: 'Hayden Pye, Macauley Library.',
@@ -226,6 +244,7 @@ exports.seed = (knex) => {
           English_Name: 'North Island Adzebill',
           Country: 'Aotearoa',
           Status: 5,
+          Sound_Level: 7,
           Habitat: 'Grasslands',
           Media_Notes: 'Simulated call, December 2016.',
           Sound_Credit:
@@ -238,6 +257,7 @@ exports.seed = (knex) => {
           English_Name: 'Swamp Harrier',
           Country: 'Aotearoa',
           Status: '1',
+          Sound_Level: 5,
           Habitat: 'Wetlands',
           Media_Notes:
             '"Australian Harrier calls from one, possibly two unseen birds in flight near Hay\'s Creek Reservoir, Papakura 29/08/22"","',
@@ -250,6 +270,7 @@ exports.seed = (knex) => {
           English_Name: 'South Island Giant Moa',
           Country: 'Aotearoa',
           Status: 5,
+          Sound_Level: 6,
           Habitat: 'Various',
           Media_Notes:
             'Digital reconstruction (South Island robins, grey warbler, blackbird, kiwi & bellbird in background), Porirua, December 2002, Night.',
@@ -263,6 +284,7 @@ exports.seed = (knex) => {
           English_Name: 'Little Spotted Kiwi',
           Country: 'Aotearoa',
           Status: '3',
+          Sound_Level: 6,
           Habitat: 'Forest/scrub',
           Media_Notes:
             'A bird calling at night. Elevation: 53 m. Date added to IBC: June 22, 2016.',
@@ -275,6 +297,7 @@ exports.seed = (knex) => {
           English_Name: "Haast's eagle",
           Country: 'Aotearoa',
           Status: 5,
+          Sound_Level: 8,
           Habitat: 'Alpine',
           Media_Notes: 'Simulated call, December 2018.',
           Sound_Credit:
@@ -287,6 +310,7 @@ exports.seed = (knex) => {
           English_Name: 'Stout-Legged Moa',
           Country: 'Aotearoa',
           Status: 5,
+          Sound_Level: 8,
           Habitat: 'Forest/Coast',
           Media_Notes: 'Simulated call, December 2016.',
           Sound_Credit: 'Te Papa, New Zealand Birds Online.',
@@ -298,6 +322,7 @@ exports.seed = (knex) => {
           English_Name: 'North Island Goose',
           Country: 'Aotearoa',
           Status: 5,
+          Sound_Level: 8,
           Habitat: 'Various',
           Media_Notes: 'Simulated call, December 2016.',
           Sound_Credit: 'Te Papa, New Zealand Birds Online.',
@@ -309,6 +334,7 @@ exports.seed = (knex) => {
           English_Name: "Finsch's Duck",
           Country: 'Aotearoa',
           Status: 5,
+          Sound_Level: 7,
           Habitat: 'Drylands',
           Media_Notes: 'Simulated call, December 2016.',
           Sound_Credit: 'Te Papa, New Zealand Birds Online.',
@@ -320,6 +346,7 @@ exports.seed = (knex) => {
           English_Name: 'Snipe-Rail',
           Country: 'Aotearoa',
           Status: 5,
+          Sound_Level: 9,
           Habitat: 'Forest',
           Media_Notes: 'Simulated call, December 2016.',
           Sound_Credit:
@@ -332,6 +359,7 @@ exports.seed = (knex) => {
           English_Name: 'Huia',
           Country: 'Aotearoa',
           Status: 5,
+          Sound_Level: 6,
           Habitat: 'North Island',
           Media_Notes:
             'Human imitation of a female call, Wellington New Zealand, December 1952, Afternoon.',
@@ -345,6 +373,7 @@ exports.seed = (knex) => {
           English_Name: 'North Island Thrush',
           Country: 'Aotearoa',
           Status: 5,
+          Sound_Level: 6,
           Habitat: 'North Island',
           Media_Notes:
             'Human imitation of song, Wellington New Zealand, December 1952.',
@@ -358,6 +387,7 @@ exports.seed = (knex) => {
           English_Name: 'Chatham Island Oystercatcher',
           Country: 'Aotearoa',
           Status: 4,
+          Sound_Level: 9,
           Habitat: 'Coastal',
           Media_Notes:
             'Group of five birds giving piping display (southern black-backed gull in background), Rangatira Island, Chatham Islands, December 1971.',
@@ -371,6 +401,7 @@ exports.seed = (knex) => {
           English_Name: 'Black stilt',
           Country: 'Aotearoa',
           Status: 4,
+          Sound_Level: 8, 
           Habitat: 'Wetlands, riverbeds',
           Media_Notes:
             'Group of birds around small lake, Mount Cook, January 1982.',
@@ -384,6 +415,7 @@ exports.seed = (knex) => {
           English_Name: 'Shore Plover',
           Country: 'Aotearoa',
           Status: 4,
+          Sound_Level: 8,
           Habitat: 'Chatham Islands ',
           Media_Notes:
             'Birds calling from tidal rock pool, Rangatira Island, Chatham Islands, October 1987.',
@@ -397,6 +429,7 @@ exports.seed = (knex) => {
           English_Name: 'Fairy tern',
           Country: 'Aotearoa',
           Status: 4,
+          Sound_Level: 8,
           Habitat: 'Exposed sandspits',
           Media_Notes:
             'Flight calls while hawking insects, Lake Georgia South Austrailia.',
@@ -410,6 +443,7 @@ exports.seed = (knex) => {
           English_Name: 'Whenua Hou diving petrel',
           Country: 'Aotearoa',
           Status: 4,
+          Sound_Level: 7,
           Habitat: 'Whenua Hou (Codfish Island)',
           Media_Notes:
             "In a burrow, Ile de l'est Crozet Islands, November 1982.",
@@ -423,6 +457,7 @@ exports.seed = (knex) => {
           English_Name: 'White Heron',
           Country: 'Aotearoa',
           Status: 4,
+          Sound_Level: 8,
           Habitat: 'Harbours, estuaries, wetlands',
           Media_Notes:
             'Feeding sequence at nest, Okarito Colony, Waitangiroto River, January 1973.',
@@ -436,6 +471,7 @@ exports.seed = (knex) => {
           English_Name: 'Kakapo',
           Country: 'Aotearoa',
           Status: 4,
+          Sound_Level: 9,
           Habitat: 'Forest Islands',
           Media_Notes:
             'Booming and Chinging, Arena Ridge, Stewart Island, January 1985.',
