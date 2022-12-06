@@ -3,13 +3,7 @@ import React from 'react'
 import { Html } from '@react-three/drei'
 
 function Info({ data }) {
-  let text = ''
-
-  Object.keys(data).map((propertyName) => {
-    if (data[propertyName].length > 0) {
-      text = text + `${propertyName}: ${data[propertyName]}\n`
-    }
-  })
+  const text = `${data.Sound_Id}`
 
   return (
     <Html className="info" distanceFactor={2} position={[0, 2, 0]}>

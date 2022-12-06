@@ -20,16 +20,16 @@ function Birds() {
   }
 
   function getRandomCoords() {
-    const x = getRandomInt(20)
-    const y = getRandomInt(10)
-    const z = getRandomInt(10)
+    const x = getRandomInt(200)
+    const y = getRandomInt(50)
+    const z = getRandomInt(50)
     return [x, y, z]
   }
 
   return (
     <>
       {data.length > 0 ? (
-        <Canvas camera={{ position: [0, 0, 10] }}>
+        <Canvas camera={{ position: [0, 0, 100] }}>
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.95} penumbra={1} />
           <pointLight position={[-10, -10, -10]} />

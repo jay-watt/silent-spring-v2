@@ -6,38 +6,32 @@ import { a, useSpring } from '@react-spring/three'
 import Sound from './Sound'
 import Info from './Info'
 
-function Bird({ position, data }) {
+function Bird({ position, data: birdData }) {
   const bird = useRef(null)
   const { camera } = useThree()
-  const audioUrl = `./server/public/audio/${data.Sound_Id}.mp3`
-  const minCamDist = 10
-  const maxCamDist = 40
+  const audioUrl = `./server/public/audio/${birdData.Sound_Id}.mp3`
+  const minDist = 10
+  const maxDist = 40
 
+  // const [phase, setPhase] = useState(5)
   const [birdState, setBirdState] = useState({
-    click: false,
-    camDist: 0,
+    currentDist: 0,
     active: 0,
+    clicked: false,
     visible: true,
     phase: 5
   })
 
-  // distance from bird to camera
+  // conditionally render animation and info
   useFrame(() => {
-    const currentCamPos = camera.position
-    const currentBirdPos = bird.current.position
-    const currentDist = currentCamPos.distanceTo(currentBirdPos)
-    if (
-      (currentDist > maxCamDist && birdState.active) ||
-      (currentDist < minCamDist && birdState.active)
-    ) {
+    const dist = camera.position.distanceTo(bird.current.position)
+    if (birdState.clicked && (dist > maxDist || dist < minDist)) {
       setBirdState({
         ...birdState,
-        click: !birdState.click,
         active: 0,
-        camDist: currentDist,
+        clicked: false,
+        currentDist: dist,
       })
-    } else {
-      setBirdState({ ...birdState, camDist: currentDist })
     }
   })
 
@@ -46,14 +40,14 @@ function Bird({ position, data }) {
     const handleRemove = (event) => {
       if (event.key === ' ') {
         setBirdState({ ...birdState, phase: birdState.phase - 1 })
-        if (birdState.visible && data.status === birdState.phase) {
-          setBirdState({ ...birdState, click: false, visible: false })
+        if (birdState.visible && (birdData.Status === birdState.phase)) {
+          setBirdState({ ...birdState, active: 0, clicked: false, visible: false })
         }
       }
     }
     document.addEventListener('keydown', handleRemove)
-    return () => {
-      if (birdState.phase === 0) {
+    if (birdState.phase === 1) {
+      return () => {
         document.removeEventListener('keydown', handleRemove)
       }
     }
@@ -61,14 +55,13 @@ function Bird({ position, data }) {
 
   // show info if bird correct distance from camera
   function handleClick() {
-    const currentCamPos = camera.position
-    const currentBirdPos = bird.current.position
-    const currentDist = currentCamPos.distanceTo(currentBirdPos)
-    if (currentDist < maxCamDist && currentDist > minCamDist && birdState.visible) {
+    const dist = camera.position.distanceTo(bird.current.position)
+    if (dist < maxDist && dist > minDist && birdState.visible) {
       setBirdState({
-        ...birdState, click: !birdState.click,
+        ...birdState,
         active: Number(!birdState.active),
-        camDist: currentDist,
+        clicked: !birdState.clicked,
+        camDist: dist,
       })
     }
   }
@@ -92,10 +85,10 @@ function Bird({ position, data }) {
       visible={birdState.visible ? true : false}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial />
+      <meshStandardMaterial color={"hotpink"} />
       <Sound url={audioUrl} visible={birdState.visible} />
       {/* Not using && because when false, returns a non-null value */}
-      {(birdState.click && birdState.visible) ? <Info data={data} /> : null}
+      {(birdState.clicked && birdState.visible) ? <Info data={birdData} /> : null}
     </a.mesh>
   )
 }
