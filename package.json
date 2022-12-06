@@ -44,7 +44,8 @@
     "react-redux": "^7.2.5",
     "three": "^0.147.0",
     "troika-3d": "^0.46.0",
-    "troika-three-text": "^0.46.4"
+    "troika-three-text": "^0.46.4",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",

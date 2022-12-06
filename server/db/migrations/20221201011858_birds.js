@@ -6,6 +6,7 @@ exports.up = (knex) => {
     table.string('English_Name')
     table.string('Country')
     table.integer('Status')
+    table.integer('Sound_Level')
     table.string('Habitat')
     table.string('Media_Notes')
     table.string('Sound_Credit')
