@@ -3,24 +3,19 @@ import * as THREE from 'three'
 import React, { useRef, useEffect, useState } from 'react'
 import { useThree, useLoader } from '@react-three/fiber'
 
-function Sound({ url, visible, vol }) {
+function Sound({ url, visible, volAdjust }) {
   const sound = useRef()
   const { camera } = useThree()
   const [listener] = useState(() => new THREE.AudioListener())
   const buffer = useLoader(THREE.AudioLoader, url)
+  const vol = 1 / volAdjust
 
   useEffect(() => {
     sound.current.setBuffer(buffer)
-    sound.current.setRefDistance(1)
+    sound.current.setRefDistance(10)
     sound.current.setRolloffFactor(1)
-    sound.current.setVolume(vol)
     sound.current.setLoop(true)
-    if (visible) {
-      fade(true, sound.current)
-    }
-    else {
-      fade(false, sound.current)
-    }
+    fade(visible ? true : false, sound.current)
     camera.add(listener)
     return () => camera.remove(listener)
   }, [visible])
@@ -28,8 +23,8 @@ function Sound({ url, visible, vol }) {
   function fade(inBool, audio) {
     if (inBool) audio.play()
     let counter = inBool ? 0 : 10
-    const steps = 10
-    const fadeTime = 5000
+    const steps = 30
+    const fadeTime = 3000
     const interval = fadeTime / steps
     const intervalId = setInterval(function () {
       let fadeVol = (vol / steps) * counter
@@ -41,7 +36,6 @@ function Sound({ url, visible, vol }) {
       }
     }, interval)
   }
-
 
   return <positionalAudio ref={sound} args={[listener]} />
 }

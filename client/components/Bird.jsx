@@ -10,16 +10,21 @@ function Bird({ position, data: birdData }) {
   const bird = useRef(null)
   const { camera } = useThree()
   const audioUrl = `./server/public/audio/${birdData.Sound_Id}.mp3`
+  const volAdjust = birdData.Status === 5 ? birdData.Sound_Level - 4 : (birdData.Sound_Level - 4) * 2
   const minDist = 5
   const maxDist = 25
 
-  // const [phase, setPhase] = useState(5)
   const [birdState, setBirdState] = useState({
     currentDist: 0,
     active: 0,
     clicked: false,
+<<<<<<< HEAD
     visible: true,
     phase: 5,
+=======
+    visible: 1,
+    phase: 5
+>>>>>>> cube-fade
   })
 
   // conditionally render animation and info
@@ -40,6 +45,7 @@ function Bird({ position, data: birdData }) {
     const handleRemove = (event) => {
       if (event.key === ' ') {
         setBirdState({ ...birdState, phase: birdState.phase - 1 })
+<<<<<<< HEAD
         if (birdState.visible && birdData.Status === birdState.phase) {
           setBirdState({
             ...birdState,
@@ -47,6 +53,10 @@ function Bird({ position, data: birdData }) {
             clicked: false,
             visible: false,
           })
+=======
+        if (birdState.visible && (birdData.Status === birdState.phase)) {
+          setBirdState({ ...birdState, active: 0, clicked: false, visible: 0 })
+>>>>>>> cube-fade
         }
       }
     }
@@ -68,30 +78,34 @@ function Bird({ position, data: birdData }) {
         clicked: !birdState.clicked,
         camDist: dist,
       })
+      console.log(Number(!birdState.active))
     }
   }
 
   // animation setup
-  const { spring } = useSpring({
-    spring: birdState.active,
-    config: { mass: 5, tension: 400, friction: 50, precision: 0.0001 },
-  })
-  const scale = spring.to([0, 1], [1, 5])
+  const { spring } = useSpring({ spring: birdState.active })
   const rotation = spring.to([0, 1], [0, Math.PI])
+
+  const { fade } = useSpring({ fade: birdState.visible })
+  const scale = fade.to([1, 0], [1, 0.2])
 
   return (
     <a.mesh
       ref={bird}
       position={position}
       rotation-y={rotation}
-      scale-x={scale}
-      scale-z={scale}
+      scale={scale}
       onClick={handleClick}
-      visible={birdState.visible ? true : false}
+      transparent={true}
     >
       <boxGeometry args={[1, 1, 1]} />
+<<<<<<< HEAD
       <meshStandardMaterial color={'SandyBrown'} />
       <Sound url={audioUrl} visible={birdState.visible} vol={1} />
+=======
+      <meshStandardMaterial color={"hotpink"} />
+      <Sound url={audioUrl} visible={birdState.visible} volAdjust={volAdjust} />
+>>>>>>> cube-fade
       {/* Not using && because when false, returns a non-null value */}
       {birdState.clicked && birdState.visible ? <Info data={birdData} /> : null}
     </a.mesh>
