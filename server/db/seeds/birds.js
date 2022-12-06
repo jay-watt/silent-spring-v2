@@ -256,7 +256,7 @@ exports.seed = (knex) => {
           Te_Reo: 'Kāhu',
           English_Name: 'Swamp Harrier',
           Country: 'Aotearoa',
-          Status: '1',
+          Status: 1,
           Sound_Level: 5,
           Habitat: 'Wetlands',
           Media_Notes:
