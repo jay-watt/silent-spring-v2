@@ -90,7 +90,7 @@ function Bird({ position, data: birdData }) {
       visible={birdState.visible ? true : false}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={'DarkKhaki'} />
+      <meshStandardMaterial color={'SandyBrown'} />
       <Sound url={audioUrl} visible={birdState.visible} vol={1} />
       {/* Not using && because when false, returns a non-null value */}
       {birdState.clicked && birdState.visible ? <Info data={birdData} /> : null}
