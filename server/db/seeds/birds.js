@@ -432,7 +432,7 @@ exports.seed = (knex) => {
           Sound_Level: 8,
           Habitat: 'Exposed sandspits',
           Media_Notes:
-            'Flight calls while hawking insects, Lake Georgia South Austrailia.',
+            'Flight calls while hawking insects, Lake Georgia South Australia.',
           Sound_Credit:
             'Harold and Audrey Couch, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },

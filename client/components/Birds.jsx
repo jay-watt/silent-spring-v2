@@ -35,16 +35,13 @@ function Birds() {
           <pointLight position={[-10, -10, -10]} />
           {data.map((data) => {
             return (
-              <Bird key={data.id}
-                position={getRandomCoords()}
-                data={data}
-              />
+              <Bird key={data.id} position={getRandomCoords()} data={data} />
             )
           })}
           <Controls />
         </Canvas>
       ) : (
-        <p>Not loading, try refreshing the page.</p>
+        <br />
       )}
     </>
   )
