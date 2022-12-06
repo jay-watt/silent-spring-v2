@@ -29,8 +29,28 @@ body {
 }
 
 .info {
+  min-width: 1000px;
+  height: 100%;
   font-family: 'Noticia Text', serif;
-  color: rgb(184, 147, 219);
-  font-size: 200px;
+  color: rgb(196, 174, 216);
+  font-size: 150px;
+  display: block;
+  flex-direction:row; 
+  background: rgba(60, 51, 62, 0.73);
+  box-shadow: 5px 5px 15px rgbrgba(138, 117, 173, 0.5);
+
+  
+  padding: 0 60px;
+}
+
+.soundcredit {
+  font-size:120px;
+  min-width: 2400px;
+  height: 100%;
+  font-family: 'Noticia Text', serif;
+  color: rgb(196, 174, 216);
+  display: block;
+  flex-direction:row; 
+  box-shadow: 5px 5px 15px rgbrgba(138, 117, 173, 0.5)
 }
 
