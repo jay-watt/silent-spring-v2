@@ -368,6 +368,7 @@ exports.seed = (knex) => {
           Sound_Credit:
             'https://nzbirdsonline.org.nz/sites/all/files/14%20Track%2014.mp3',
         },
+
         {
           id: 31,
           Sound_Id: '31kaki',
@@ -409,7 +410,7 @@ exports.seed = (knex) => {
         },
         {
           id: 34,
-          Sound_Id: '34kuaka-whanua-hou',
+          Sound_Id: '34kuaka-whenua-hou',
           Te_Reo: 'Kuaka Whenua Hou',
           English_Name: 'Whenua Hou diving petrel',
           Country: 'Aotearoa',

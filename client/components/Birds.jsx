@@ -11,9 +11,7 @@ function Birds() {
 
   useEffect(() => {
     fetchBirds()
-      .then((birds) => {
-        setData(() => birds)
-      })
+      .then((birds) => setData(birds))
       .catch((err) => err.message)
   }, [])
 
