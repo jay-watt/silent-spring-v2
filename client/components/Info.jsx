@@ -26,7 +26,9 @@ function Info({ data }) {
         {' '}
         <h3>{birdName}</h3>
         <p>{data.Media_Notes}</p>
-        <p>{data.Sound_Credit}</p>
+        <div className="soundcredit">
+          <p>{data.Sound_Credit}</p>
+        </div>
       </div>
     </Html>
   )
