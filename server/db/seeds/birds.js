@@ -12,9 +12,9 @@ exports.seed = (knex) => {
           Status: 1,
           Habitat: 'Aotearoa',
           Media_Notes:
-            'South Island(male song) Franz Josef Glacier, December 1956',
+            'South Island fantail adult call (with goldfinches and sheep), Te Oka Bay Banks Peninsula, March 1970, 09.47.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/35%20-%20Unknown%20Title%20-%20Unknown%20Artist.mp3 Carl & Lise Wiesmann ',
+            'Les McPherson, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 2,
@@ -26,8 +26,7 @@ exports.seed = (knex) => {
           Habitat: 'Wetlands',
           Media_Notes:
             'Calls by one bird. Elevation: 53 m. Date added to IBC: June 22, 2016.',
-          Sound_Credit:
-            'https://macaulaylibrary.org/asset/203926471 Carl & Lise Wiesmann ',
+          Sound_Credit: 'Josep del Hoyo, Macauley Library.',
         },
         {
           id: 3,
@@ -37,9 +36,10 @@ exports.seed = (knex) => {
           Country: 'Aotearoa',
           Status: 1,
           Habitat: 'Broadleaf forests',
-          Media_Notes: 'Kapiti Island, October 1956',
+          Media_Notes:
+            'Single bird singing (redpolls in background), Andersons Park Invercargill, January 1984, 1600.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/13%20-%20Tui.mp3',
+            'Les McPherson, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 4,
@@ -50,7 +50,7 @@ exports.seed = (knex) => {
           Status: 3,
           Habitat: 'Grasslands',
           Media_Notes: '',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/212043711',
+          Sound_Credit: 'Alex Berryman, Macauley Library.',
         },
         {
           id: 5,
@@ -60,9 +60,10 @@ exports.seed = (knex) => {
           Country: 'Aotearoa',
           Status: 1,
           Habitat: 'Forest',
-          Media_Notes: 'Wing sounds of four adults, Te Anau, October 2012',
+          Media_Notes:
+            'Wingbeats from one of 4 fighting/displaying adults, Te Anau, October 2012, 6.35am.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/NIA%20417%20NZ%20Pigeon%20wingbeats.mp3',
+            'Nicholas Allen, nick_allen@xtra.co.nz, New Zealand Birds Online.',
         },
         {
           id: 6,
@@ -74,7 +75,7 @@ exports.seed = (knex) => {
           Habitat: 'Coast',
           Media_Notes:
             'Calls by a group of birds while feeding on chum. Recorded from a ship. Elevation: 0 m. Date added to IBC: June 22, 2016.',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/203926781',
+          Sound_Credit: 'Josep del Hoyo, Macauley Library.',
         },
         {
           id: 7,
@@ -98,7 +99,7 @@ exports.seed = (knex) => {
           Habitat: 'Forest',
           Media_Notes:
             'A female calling. Elevation: 53 m. Date added to IBC: June 22, 2016.',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/203926621',
+          Sound_Credit: 'Josep del Hoyo, Macauley Library.',
         },
         {
           id: 9,
@@ -109,8 +110,7 @@ exports.seed = (knex) => {
           Status: 1,
           Habitat: 'Lakes, Larger constructed ponds, estauries',
           Media_Notes: 'Meola Reef, Westmere (Coastal Walkway)',
-          Sound_Credit:
-            'Back up: https://search.macaulaylibrary.org/catalog?taxonCode=blkswa&mediaType=audio',
+          Sound_Credit: 'Katie R, Macauley Library.',
         },
         {
           id: 10,
@@ -122,7 +122,7 @@ exports.seed = (knex) => {
           Habitat: 'Wetlands',
           Media_Notes:
             'A bird calling. Elevation: 53 m. Date added to IBC: June 22, 2016.',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/203926751',
+          Sound_Credit: 'Josep del Hoyo, Macauley Library.',
         },
         {
           id: 11,
@@ -132,8 +132,9 @@ exports.seed = (knex) => {
           Country: 'Aotearoa',
           Status: 3,
           Habitat: 'Dense Wetlands',
-          Media_Notes: 'Adult song, Kapiti Island October 1956',
-          Sound_Credit: 'Carl & Lise Wiesmann',
+          Media_Notes:
+            'Calls by one bird. Elevation: 53 m. Date added to IBC: June 22, 2016.',
+          Sound_Credit: 'Josep del Hoyo, Macauley Library.',
         },
         {
           id: 12,
@@ -143,8 +144,9 @@ exports.seed = (knex) => {
           Country: 'Aotearoa',
           Status: 2,
           Habitat: 'Forest',
-          Media_Notes: '',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/285324401',
+          Media_Notes:
+            'Two birds alarmcalling. Elevation: 53 m. Date added to IBC: June 22, 2016.',
+          Sound_Credit: 'Josep del Hoyo, Macauley Library.',
         },
         {
           id: 13,
@@ -154,8 +156,8 @@ exports.seed = (knex) => {
           Country: 'Aotearoa',
           Status: 2,
           Habitat: 'Coastal marine waters',
-          Media_Notes: 'Orakei Basin',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/190120641',
+          Media_Notes: 'Pied Shag colony with active nests, Orakei Basin.',
+          Sound_Credit: 'Jim Kirker, Macauley Library.',
         },
         {
           id: 14,
@@ -167,7 +169,7 @@ exports.seed = (knex) => {
           Habitat: 'Forest/shrubland',
           Media_Notes:
             'Several birds calling from bushes. Elevation: 53 m. Date added to IBC: June 22, 2016.',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/204016011',
+          Sound_Credit: 'Nicholas Talbot, Macauley Library.',
         },
         {
           id: 15,
@@ -180,7 +182,7 @@ exports.seed = (knex) => {
           Media_Notes:
             'Small flock, taking off from the water at Harts Creek, Ellesmere, December 2012',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/NIA%20582%20Little%20Pied%20Cormorant.mp3',
+            'Nicholas Allen, nick_allen@xtra.co.nz, New Zealand Birds Online.',
         },
         {
           id: 16,
@@ -191,7 +193,7 @@ exports.seed = (knex) => {
           Status: 1,
           Habitat: 'Forest',
           Media_Notes: 'NOTES: 10 dB pad engaged on microphone.',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/136045',
+          Sound_Credit: 'Matthew D. Medler, Macauley Library.',
         },
         {
           id: 17,
@@ -202,9 +204,9 @@ exports.seed = (knex) => {
           Status: 3,
           Habitat: 'Coastal ',
           Media_Notes:
-            'Begging young, one adult at nest, Te Oka Bay Banks Peninsula',
+            'Begging young, one adult at nest, Te Oka Bay Banks Peninsula, October 1970, 1535.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/04%20-%20Track%204%281%29.mp3',
+            'Les McPherson, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 18,
@@ -215,7 +217,7 @@ exports.seed = (knex) => {
           Status: 1,
           Habitat: 'Forest',
           Media_Notes: '',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/380864781',
+          Sound_Credit: 'Hayden Pye, Macauley Library.',
         },
         {
           id: 19,
@@ -225,10 +227,9 @@ exports.seed = (knex) => {
           Country: 'Aotearoa',
           Status: 5,
           Habitat: 'Grasslands',
-          Media_Notes:
-            'Simulated call, December 2016, Simulation by David Antony Clark, David Antony Clark, http://www.ucamusic.com/childrens-music-shop/choose-by-age/older-kids/birdsong-cafe-the-sound-of-the-new-zealand-rainforest/',
+          Media_Notes: 'Simulated call, December 2016.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/ADZEBILL.mp3',
+            'Simulation by David Antony Clark, David Antony Clark, http://www.ucamusic.com/childrens-music-shop/choose-by-age/older-kids/birdsong-cafe-the-sound-of-the-new-zealand-rainforest/, New Zealand Birds Online.',
         },
         {
           id: 20,
@@ -240,7 +241,7 @@ exports.seed = (knex) => {
           Habitat: 'Wetlands',
           Media_Notes:
             '"Australian Harrier calls from one, possibly two unseen birds in flight near Hay\'s Creek Reservoir, Papakura 29/08/22"","',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/479309141',
+          Sound_Credit: 'Jim Kirker, Macauley Library.',
         },
         {
           id: 21,
@@ -251,9 +252,9 @@ exports.seed = (knex) => {
           Status: 5,
           Habitat: 'Various',
           Media_Notes:
-            'Digital reconstruction (South Island robins, grey warbler, blackbird, kiwi & bellbird in background), Porirua, December 2002, Night, David Clark, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com',
+            'Digital reconstruction (South Island robins, grey warbler, blackbird, kiwi & bellbird in background), Porirua, December 2002, Night.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/70%20-%20Moa%20%28Reconstructed%29.mp3',
+            'David Clark, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 22,
@@ -265,20 +266,19 @@ exports.seed = (knex) => {
           Habitat: 'Forest/scrub',
           Media_Notes:
             'A bird calling at night. Elevation: 53 m. Date added to IBC: June 22, 2016.',
-          Sound_Credit: 'https://macaulaylibrary.org/asset/204016071',
+          Sound_Credit: 'Nicholas Talbot, Macauley Library.',
         },
         {
           id: 23,
           Sound_Id: '23haast-eagle',
-          Te_Reo: '',
+          Te_Reo: 'Te Hōkioi',
           English_Name: "Haast's eagle",
           Country: 'Aotearoa',
           Status: 5,
           Habitat: 'Alpine',
-          Media_Notes:
-            'Simulated call, December 2018, Simulation by Piers Gilbertson, Te Papa,',
+          Media_Notes: 'Simulated call, December 2018.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/%28BIRDY%20-%20HAAST%27S%20EAGLE.mp3',
+            'Simulation by Piers Gilbertson, Te Papa, New Zealand Birds Online.',
         },
         {
           id: 24,
@@ -288,9 +288,8 @@ exports.seed = (knex) => {
           Country: 'Aotearoa',
           Status: 5,
           Habitat: 'Forest/Coast',
-          Media_Notes: 'Simulated call, December 2016, Te Papa, Te Papa,',
-          Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/%28BIRDY%20-%20MOA.mp3',
+          Media_Notes: 'Simulated call, December 2016.',
+          Sound_Credit: 'Te Papa, New Zealand Birds Online.',
         },
         {
           id: 25,
@@ -300,9 +299,8 @@ exports.seed = (knex) => {
           Country: 'Aotearoa',
           Status: 5,
           Habitat: 'Various',
-          Media_Notes: 'Simulated call, December 2016, Te Papa, Te Papa,',
-          Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/%28BIRDY%20-%20NZ%20GOOSE%20FINAL.mp3',
+          Media_Notes: 'Simulated call, December 2016.',
+          Sound_Credit: 'Te Papa, New Zealand Birds Online.',
         },
         {
           id: 26,
@@ -312,9 +310,8 @@ exports.seed = (knex) => {
           Country: 'Aotearoa',
           Status: 5,
           Habitat: 'Drylands',
-          Media_Notes: 'Simulated call, December 2016, Te Papa, Te Papa,',
-          Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/%28BIRDY%20-%20FINSCHS%20DUCK%20FINAL.mp3',
+          Media_Notes: 'Simulated call, December 2016.',
+          Sound_Credit: 'Te Papa, New Zealand Birds Online.',
         },
         {
           id: 27,
@@ -324,10 +321,9 @@ exports.seed = (knex) => {
           Country: 'Aotearoa',
           Status: 5,
           Habitat: 'Forest',
-          Media_Notes:
-            'Simulated call, December 2016, Simulation by David Antony Clark, David Antony Clark, http://www.ucamusic.com/childrens-music-shop/choose-by-age/older-kids/birdsong-cafe-the-sound-of-the-new-zealand-rainforest/',
+          Media_Notes: 'Simulated call, December 2016.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/Snipe-rail.mp3',
+            'Simulation by David Antony Clark, http://www.ucamusic.com/childrens-music-shop/choose-by-age/older-kids/birdsong-cafe-the-sound-of-the-new-zealand-rainforest/, New Zealand Birds Online.',
         },
         {
           id: 28,
@@ -338,9 +334,9 @@ exports.seed = (knex) => {
           Status: 5,
           Habitat: 'North Island',
           Media_Notes:
-            'Human imitation of a female call, Wellington New Zealand, December 1952, Afternoon, Henare Haumana (deceased), McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com',
+            'Human imitation of a female call, Wellington New Zealand, December 1952, Afternoon.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/03%20-%20Track%203%281%29.mp3',
+            'Henare Haumana (deceased), McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 29,
@@ -351,9 +347,9 @@ exports.seed = (knex) => {
           Status: 5,
           Habitat: 'North Island',
           Media_Notes:
-            'Human imitation of song, Wellington New Zealand, December 1952, Afternoon, Henare Haumana, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com',
+            'Human imitation of song, Wellington New Zealand, December 1952.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/34%20-%20North%20Island%20Thrush%20%28Imitation%29.mp3',
+            'Henare Haumana (deceased), McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 30,
@@ -364,11 +360,10 @@ exports.seed = (knex) => {
           Status: 4,
           Habitat: 'Coastal',
           Media_Notes:
-            'Birds calling, Rangatira Island, Chatham Islands, December 1971',
+            'Group of five birds giving piping display (southern black-backed gull in background), Rangatira Island, Chatham Islands, December 1971.',
           Sound_Credit:
-            'https://nzbirdsonline.org.nz/sites/all/files/14%20Track%2014.mp3',
+            'Les McPherson, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
-
         {
           id: 31,
           Sound_Id: '31kaki',
@@ -378,9 +373,9 @@ exports.seed = (knex) => {
           Status: 4,
           Habitat: 'Wetlands, riverbeds',
           Media_Notes:
-            'Group of birds around small lake, Mount Cook, January 1982',
+            'Group of birds around small lake, Mount Cook, January 1982.',
           Sound_Credit:
-            'Les McPherson, McPherson Natural history unit sound archive',
+            'Les McPherson, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 32,
@@ -391,9 +386,9 @@ exports.seed = (knex) => {
           Status: 4,
           Habitat: 'Chatham Islands ',
           Media_Notes:
-            'Birds calling from tidal rock pool, Rangatira Island, Chatham Islands, October 1987',
+            'Birds calling from tidal rock pool, Rangatira Island, Chatham Islands, October 1987.',
           Sound_Credit:
-            'Ron Nilsson, McPherson Natural history unit sound archive',
+            'Ron Nilsson, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 33,
@@ -404,48 +399,48 @@ exports.seed = (knex) => {
           Status: 4,
           Habitat: 'Exposed sandspits',
           Media_Notes:
-            'Flight calls while hawking insects, Lake Georgia South Austrailia',
+            'Flight calls while hawking insects, Lake Georgia South Austrailia.',
           Sound_Credit:
-            'Harold and Audrey Couch, McPherson Natural history unit sound archive',
+            'Harold and Audrey Couch, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 34,
-          Sound_Id: '34kuaka-whenua-hou',
+          Sound_Id: '34kuaka-whanua-hou',
           Te_Reo: 'Kuaka Whenua Hou',
           English_Name: 'Whenua Hou diving petrel',
           Country: 'Aotearoa',
           Status: 4,
           Habitat: 'Whenua Hou (Codfish Island)',
           Media_Notes:
-            "In a burrow, Ile de l'est Crozet Islands, November 1982",
+            "In a burrow, Ile de l'est Crozet Islands, November 1982.",
           Sound_Credit:
-            'P. Frigola, McPherson Natural history unit sound archive',
+            'P. Frigola, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 35,
-          Sound_Id: '35Kotuku',
+          Sound_Id: '35kotuku',
           Te_Reo: 'Kōtuku ',
           English_Name: 'White Heron',
           Country: 'Aotearoa',
           Status: 4,
           Habitat: 'Harbours, estuaries, wetlands',
           Media_Notes:
-            'Feeding sequence at nest, Okarito Colony, Waitangiroto River, January 1973',
+            'Feeding sequence at nest, Okarito Colony, Waitangiroto River, January 1973.',
           Sound_Credit:
-            'Les McPherson, McPherson Natural history unit sound archive',
+            'Les McPherson, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
         {
           id: 36,
-          Sound_Id: '36Kakapo',
+          Sound_Id: '36kakapo',
           Te_Reo: 'Kākāpō',
           English_Name: 'Kakapo',
           Country: 'Aotearoa',
           Status: 4,
           Habitat: 'Forest Islands',
           Media_Notes:
-            'Booming and Chinging, Arena Ridge, Stewart Island, January 1985',
+            'Booming and Chinging, Arena Ridge, Stewart Island, January 1985.',
           Sound_Credit:
-            'Ralph Polsted, McPherson Natural history unit sound archive',
+            'Ralph Polsted, McPherson Natural History Unit Sound Archive, www.archivebirdsnz.com, New Zealand Birds Online.',
         },
       ])
     })
