@@ -17,7 +17,7 @@ function Bird(props) {
   const [birdState, setBirdState] = useState({
     click: false,
     camDist: 0,
-    active: 0,
+    active: Number(0),
   })
 
   const minCamDist = 5
@@ -41,7 +41,7 @@ function Bird(props) {
       setBirdState({
         ...birdState,
         click: !birdState.click,
-        active: 0,
+        active: Number(0),
         camDist: currentDist,
       })
     } else {
@@ -54,9 +54,11 @@ function Bird(props) {
     const currentBirdPos = bird.current.position
     const currentDist = currentCamPos.distanceTo(currentBirdPos)
     if (currentDist < maxCamDist && currentDist > minCamDist) {
-      setClick(!click)
-      setActive(Number(!active))
-      setDist(currentDist)
+      setBirdState({
+        ...birdState, click: !birdState.click,
+        active: Number(!birdState.active),
+        camDist: currentDist,
+      })
     }
   }
 
