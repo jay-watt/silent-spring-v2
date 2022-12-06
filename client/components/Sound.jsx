@@ -16,7 +16,7 @@ function Sound({ url, visible, vol }) {
     sound.current.setVolume(vol)
     sound.current.setLoop(true)
     if (visible) {
-      sound.current.play()
+      fade(true, sound.current)
     }
     else {
       fade(false, sound.current)
@@ -26,6 +26,7 @@ function Sound({ url, visible, vol }) {
   }, [visible])
 
   function fade(inBool, audio) {
+    if (inBool) audio.play()
     let counter = inBool ? 0 : 10
     const steps = 10
     const fadeTime = 5000
@@ -36,7 +37,7 @@ function Sound({ url, visible, vol }) {
       inBool ? counter++ : counter--
       if (counter === (inBool ? steps : 0)) {
         clearInterval(intervalId)
-        if (!inBool) sound.current.stop()
+        if (!inBool) audio.stop()
       }
     }, interval)
   }
