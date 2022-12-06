@@ -19,7 +19,7 @@ function Bird({ position, data: birdData }) {
     active: 0,
     clicked: false,
     visible: true,
-    phase: 5
+    phase: 5,
   })
 
   // conditionally render animation and info
@@ -40,8 +40,13 @@ function Bird({ position, data: birdData }) {
     const handleRemove = (event) => {
       if (event.key === ' ') {
         setBirdState({ ...birdState, phase: birdState.phase - 1 })
-        if (birdState.visible && (birdData.Status === birdState.phase)) {
-          setBirdState({ ...birdState, active: 0, clicked: false, visible: false })
+        if (birdState.visible && birdData.Status === birdState.phase) {
+          setBirdState({
+            ...birdState,
+            active: 0,
+            clicked: false,
+            visible: false,
+          })
         }
       }
     }
@@ -85,10 +90,10 @@ function Bird({ position, data: birdData }) {
       visible={birdState.visible ? true : false}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={"hotpink"} />
+      <meshStandardMaterial color={'SandyBrown'} />
       <Sound url={audioUrl} visible={birdState.visible} vol={1} />
       {/* Not using && because when false, returns a non-null value */}
-      {(birdState.clicked && birdState.visible) ? <Info data={birdData} /> : null}
+      {birdState.clicked && birdState.visible ? <Info data={birdData} /> : null}
     </a.mesh>
   )
 }

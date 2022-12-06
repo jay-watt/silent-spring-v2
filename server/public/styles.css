@@ -23,14 +23,34 @@ body {
   margin: 0 auto;
   padding: 20px 0;
   font-family: 'Noticia Text', serif;
-  color: rgb(184, 147, 219);
+  color: rgba(208, 224, 237, 0.809);
   text-align: center;
-  background-color: rgba(138, 117, 173, 0.5);
+  background-color: rgba(190, 157, 129, 0.889);
 }
 
 .info {
+  min-width: 1000px;
+  height: 100%;
   font-family: 'Noticia Text', serif;
-  color: rgb(184, 147, 219);
-  font-size: 200px;
+  color: rgba(208, 224, 237, 0.809);
+  font-size: 150px;
+  display: block;
+  flex-direction:row; 
+  background-color: rgba(82, 124, 159, 0.811);
+  box-shadow: 5px 5px 15px rgbrgba(138, 117, 173, 0.5);
+
+  
+  padding: 0 60px;
+}
+
+.soundcredit {
+  font-size:120px;
+  min-width: 240de .0px;
+  height: 100%;
+  font-family: 'Noticia Text', serif;
+  color: rgba(208, 224, 237, 0.809);
+  display: block;
+  flex-direction:row; 
+  box-shadow: 5px 5px 15px rgbrgba(138, 117, 173, 0.5)
 }
 

@@ -44,7 +44,7 @@ function Birds() {
           <Controls />
         </Canvas>
       ) : (
-        <p>test</p>
+        <p>Not loading, try refreshing the page.</p>
       )}
     </>
   )
