@@ -423,7 +423,7 @@ exports.seed = (knex) => {
         },
         {
           id: 35,
-          Sound_Id: '35Kotuku',
+          Sound_Id: '35kotuku',
           Te_Reo: 'Kōtuku ',
           English_Name: 'White Heron',
           Country: 'Aotearoa',
@@ -436,7 +436,7 @@ exports.seed = (knex) => {
         },
         {
           id: 36,
-          Sound_Id: '36Kakapo',
+          Sound_Id: '36kakapo',
           Te_Reo: 'Kākāpō',
           English_Name: 'Kakapo',
           Country: 'Aotearoa',
