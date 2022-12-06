@@ -10,7 +10,7 @@ function Bird({ position, data: birdData }) {
   const bird = useRef(null)
   const { camera } = useThree()
   const audioUrl = `./server/public/audio/${birdData.Sound_Id}.mp3`
-  const volAdjust = (birdData.Sound_Level - 4) * 2
+  const volAdjust = birdData.Status === 5 ? birdData.Sound_Level - 4 : (birdData.Sound_Level - 4) * 2
   const minDist = 5
   const maxDist = 25
 
