@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { extend } from '@react-three/fiber'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 import Wait from './Wait'
 import Birds from './Birds'
@@ -33,8 +31,6 @@ function App() {
       document.removeEventListener('keydown', handleEnter)
     }
   }, [])
-
-  extend({ OrbitControls })
 
   return <div className="mainDiv">{isPlaying ? <Birds /> : <Wait />}</div>
 }

@@ -2,6 +2,7 @@
 import * as THREE from 'three'
 import React, { useRef, useEffect, useState } from 'react'
 import { useThree, useLoader } from '@react-three/fiber'
+// import useSound from 'use-sound'
 
 function Sound({ url, visible }) {
   const sound = useRef()
