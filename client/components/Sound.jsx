@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import React, { useRef, useEffect, useState } from 'react'
 import { useThree, useLoader } from '@react-three/fiber'
 
-function Sound({ url }) {
+function Sound({ url, visible }) {
   const sound = useRef()
   const { camera } = useThree()
   const [listener] = useState(() => new THREE.AudioListener())
@@ -15,10 +15,15 @@ function Sound({ url }) {
     sound.current.setRolloffFactor(1)
     sound.current.setVolume(1)
     sound.current.setLoop(true)
-    sound.current.play()
+    if (visible) {
+      sound.current.play()
+    }
+    else {
+      sound.current.stop()
+    }
     camera.add(listener)
     return () => camera.remove(listener)
-  }, [])
+  }, [visible])
 
   return <positionalAudio ref={sound} args={[listener]} />
 }

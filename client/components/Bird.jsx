@@ -6,51 +6,52 @@ import Banner from './Banner'
 
 function Bird({ position, data }) {
   const bird = useRef()
+  const status = data.Status
+  const audioUrl = `./server/public/audio/${data.Sound_Id}.mp3`
 
-  const [hovered, hover] = useState(false)
-  const [clicked, click] = useState(false)
-  const [remove, setRemove] = useState(false)
-  const [audioUrl, setAudioUrl] = useState(
-    `./server/public/audio/${data.Sound_Id}.mp3`
-  )
+  const [click, setClick] = useState(false)
+  const [visible, setVisible] = useState(true)
+  const [phase, setPhase] = useState(5)
 
-  // const audioUrl = `./server/public/audio/${data.Sound_Id}.mp3`
+  function handleClick() {
+    if (visible) {
+      setClick(true)
+    }
+  }
 
   useEffect(() => {
     const handleRemove = (event) => {
-      console.log(event.key)
       if (event.key === ' ') {
-        setRemove(!remove)
-        setAudioUrl('./server/public/audio/silent.mp3')
+        const newPhase = phase - 1
+        setPhase(newPhase)
+        if (visible && status === phase) {
+          setClick(false)
+          setVisible(false)
+        }
       }
     }
     document.addEventListener('keydown', handleRemove)
-
     return () => {
-      document.removeEventListener('keydown', handleRemove)
+      if (phase === 0) {
+        document.removeEventListener('keydown', handleRemove)
+      }
     }
-  })
-
-  // function killSound(sound) {
-  //   sound.current.stop()
-  //   sound.current = null
-  // }
+  }, [phase])
 
   return (
-    !remove && (
+    (
       <mesh
         ref={bird}
         position={position}
-        scale={hovered ? 1.1 : 1}
-        onClick={clicked ? () => click(false) : () => click(true)}
-        onPointerOver={() => hover(true)}
-        onPointerOut={() => hover(false)}
+        scale={1}
+        onClick={handleClick}
+        visible={visible ? true : false}
       >
         <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={hovered ? 'hotpink' : 'purple'} />
-        <Sound url={audioUrl} />
-        {clicked && <Banner data={data} />}
-      </mesh>
+        <meshStandardMaterial />
+        <Sound url={audioUrl} visible={visible} />
+        {(click && visible) && <Banner data={data} />}
+      </mesh >
     )
   )
 }
