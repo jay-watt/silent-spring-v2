@@ -21,24 +21,34 @@ function Birds() {
     return Math.floor((Math.random() - 0.5) * max + 1)
   }
 
+  // function getRandomCoords() {
+  //   const x = getRandomInt(200)
+  //   const y = getRandomInt(100)
+  //   const z = getRandomInt(100)
+  //   return [x, y, z]
+  // }
+
   function getRandomCoords() {
-    const x = getRandomInt(200)
-    const y = getRandomInt(100)
-    const z = getRandomInt(100)
+    const x = getRandomInt(0)
+    const y = getRandomInt(0)
+    const z = getRandomInt(0)
     return [x, y, z]
   }
 
   return (
     <>
       {data.length > 0 ? (
-        <Canvas camera={{ position: [0, 0, 200] }}>
+        <Canvas camera={{ position: [0, 0, 10] }}>
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.95} penumbra={1} />
           <pointLight position={[-10, -10, -10]} />
-          {data.map((data) => {
-            return (
-              <Bird key={data.id} position={getRandomCoords()} data={data} />
-            )
+          {data.map((data, idx) => {
+            if (idx < 1) {
+              return (
+                <Bird key={data.id} position={getRandomCoords()} data={data} />
+              )
+            }
+
           })}
           <Controls />
         </Canvas>
