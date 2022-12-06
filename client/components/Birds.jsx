@@ -21,8 +21,8 @@ function Birds() {
 
   function getRandomCoords() {
     const x = getRandomInt(200)
-    const y = getRandomInt(50)
-    const z = getRandomInt(50)
+    const y = getRandomInt(100)
+    const z = getRandomInt(100)
     return [x, y, z]
   }
 

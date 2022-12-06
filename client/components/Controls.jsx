@@ -16,9 +16,11 @@ function Controls() {
     <FirstPersonControls
       ref={controls}
       activeLook={true}
-      movementSpeed={20}
-      lookSpeed={0.05}
-      noFly={true}
+      movementSpeed={5}
+      lookSpeed={0.01}
+      constrainVertical={true}
+      verticalMax={Math.PI - 0.5}
+      verticalMin={0.5}
       target={controls.target}
       args={[camera, gl.domElement]}
     />

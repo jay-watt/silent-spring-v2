@@ -10,8 +10,8 @@ function Bird({ position, data: birdData }) {
   const bird = useRef(null)
   const { camera } = useThree()
   const audioUrl = `./server/public/audio/${birdData.Sound_Id}.mp3`
-  const minDist = 10
-  const maxDist = 40
+  const minDist = 5
+  const maxDist = 25
 
   // const [phase, setPhase] = useState(5)
   const [birdState, setBirdState] = useState({
@@ -86,7 +86,7 @@ function Bird({ position, data: birdData }) {
     >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={"hotpink"} />
-      <Sound url={audioUrl} visible={birdState.visible} />
+      <Sound url={audioUrl} visible={birdState.visible} vol={1} />
       {/* Not using && because when false, returns a non-null value */}
       {(birdState.clicked && birdState.visible) ? <Info data={birdData} /> : null}
     </a.mesh>
