@@ -7,7 +7,8 @@ body,
   width: 100%;
   padding: 0;
   /* margin: 0; */
-  background-image:url('./audio/Waves\,\ Sky\,\ Kawakawa.jpg');
+  background-image:url('./audio/lightgrey.jpg');
+  background-blend-mode: multiply;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,7 +17,8 @@ body,
 
 h1 {
   font-family: 'Unica One', cursive;
-
+  text-align: center;
+color: #39FF14
 }
 
 .container {
@@ -26,9 +28,10 @@ h1 {
   justify-content: space-between;
   margin: auto;
   flex-wrap: wrap;
+  /* background-color: rgb(205, 255, 223); */
 }
 
-h1, h2 {
+h2 {
   font-family: 'Noto Sans', sans-serif;
   text-align: center;
 }
@@ -55,8 +58,8 @@ p {
   padding-bottom: 10px;
   font-family: 'Noto Sans', sans-serif;
   font-size: 18px;
-  color: rgba(0, 0, 0, 0.809);
-  background-color: rgba(190, 157, 129, 0.75);
+  color: rgba(208, 224, 237, 0.809);
+  background-color: rgba(88, 111, 124, 0.75);
 }
 
 .info {
@@ -67,7 +70,8 @@ p {
   font-size: 240px;
   display: block;
   flex-direction:row; 
-  background-color: rgba(82, 124, 159, 0.811);
+  background-color: rgba(88, 111, 124, 0.75);
+
   box-shadow: 5px 5px 15px rgbrgba(138, 117, 173, 0.5);
   padding: 0 60px;
   border-radius: 30px;
