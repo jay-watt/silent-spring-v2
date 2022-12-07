@@ -18,7 +18,8 @@ body,
 h1 {
   font-family: 'Unica One', cursive;
   text-align: center;
-color: #39FF14
+color: #39FF14;
+animation: fadeIn 0.1s
 }
 
 .container {
@@ -28,6 +29,7 @@ color: #39FF14
   justify-content: space-between;
   margin: auto;
   flex-wrap: wrap;
+  animation: fadeIn 1s;
   /* background-color: rgb(205, 255, 223); */
 }
 
@@ -47,6 +49,11 @@ h2 {
 p {
   text-align: center;
   padding-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .card {
