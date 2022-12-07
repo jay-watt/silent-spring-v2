@@ -10,7 +10,10 @@ function Bird({ position, data: birdData }) {
   const bird = useRef(null)
   const { camera } = useThree()
   const audioUrl = `./server/public/audio/${birdData.Sound_Id}.mp3`
-  const volAdjust = birdData.Status === 5 ? birdData.Sound_Level - 4 : (birdData.Sound_Level - 4) * 2
+  const volAdjust =
+    birdData.Status === 5
+      ? birdData.Sound_Level - 4
+      : (birdData.Sound_Level - 4) * 2
   const minDist = 5
   const maxDist = 25
 
@@ -19,7 +22,7 @@ function Bird({ position, data: birdData }) {
     active: 0,
     clicked: false,
     visible: true,
-    phase: 5
+    phase: 5,
   })
 
   // conditionally render animation and info
@@ -40,8 +43,13 @@ function Bird({ position, data: birdData }) {
     const handleRemove = (event) => {
       if (event.key === ' ') {
         setBirdState({ ...birdState, phase: birdState.phase - 1 })
-        if (birdState.visible && (birdData.Status === birdState.phase)) {
-          setBirdState({ ...birdState, active: 0, clicked: false, visible: false })
+        if (birdState.visible && birdData.Status === birdState.phase) {
+          setBirdState({
+            ...birdState,
+            active: 0,
+            clicked: false,
+            visible: false,
+          })
         }
       }
     }
@@ -72,7 +80,7 @@ function Bird({ position, data: birdData }) {
   const rotation = spring.to([0, 1], [0, Math.PI])
 
   const { fade } = useSpring({ fade: birdState.visible })
-  const scale = fade.to([true, false], [1, 0.2])
+  const scale = fade.to([true, false], [1, 0.05])
 
   return (
     <a.mesh
@@ -83,7 +91,7 @@ function Bird({ position, data: birdData }) {
       onClick={handleClick}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={"SandyBrown"} />
+      <meshStandardMaterial color={'SandyBrown'} />
       <Sound url={audioUrl} visible={birdState.visible} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
       {birdState.clicked && birdState.visible ? <Info data={birdData} /> : null}

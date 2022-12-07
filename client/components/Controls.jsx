@@ -16,7 +16,7 @@ function Controls() {
     <FirstPersonControls
       ref={controls}
       activeLook={true}
-      movementSpeed={5}
+      movementSpeed={10}
       lookSpeed={0.01}
       constrainVertical={true}
       verticalMax={Math.PI - 0.25}
