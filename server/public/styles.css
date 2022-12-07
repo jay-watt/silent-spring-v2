@@ -6,13 +6,16 @@ body,
   height: 100%;
   width: 100%;
   padding: 0;
-  /* margin: 0; */
   background-image:url('./audio/lightgrey.jpg');
   background-blend-mode: multiply;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: center;
+}
+
+html {
+  overflow: hidden;
 }
 
 h1 {
