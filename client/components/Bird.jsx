@@ -80,6 +80,7 @@ function Bird({ position, data: birdData }) {
   function handleHoverIn() {
     const dist = camera.position.distanceTo(bird.current.position)
     if (dist < maxDist && dist > minDist && birdState.visible)
+      // if (dist < maxDist && dist > minDist && birdState.visible && !birdState.clicked)
       setBirdState({
         ...birdState,
         camDist: dist,
