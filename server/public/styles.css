@@ -18,6 +18,11 @@ body {
   font-family: 'Noticia Text', serif;
 }
 
+h1 {
+  font-family: 'Unica One', cursive;
+
+}
+
 .container {
   width: 20%;
   margin: 0 auto;
@@ -31,11 +36,11 @@ body {
 }
 
 .info {
-  min-width: 1000px;
+  min-width: 5000px;
   height: 100%;
   font-family: 'Noticia Text', serif;
   color: rgba(208, 224, 237, 0.809);
-  font-size: 150px;
+  font-size: 240px;
   display: block;
   flex-direction:row; 
   background-color: rgba(82, 124, 159, 0.811);
@@ -46,8 +51,8 @@ body {
 }
 
 .soundcredit {
-  font-size:120px;
-  min-width: 240de .0px;
+  font-size:220px;
+  min-width: 5000px;
   height: 100%;
   font-family: 'Noticia Text', serif;
   color: rgba(208, 224, 237, 0.809);
