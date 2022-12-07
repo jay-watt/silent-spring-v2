@@ -14,8 +14,8 @@ function Bird({ position, data: birdData }) {
     birdData.Status === 5
       ? birdData.Sound_Level - 4
       : (birdData.Sound_Level - 4) * 2
-  const minDist = 5
-  const maxDist = 25
+  const minDist = 8
+  const maxDist = 22
 
   const [birdState, setBirdState] = useState({
     currentDist: 0,
