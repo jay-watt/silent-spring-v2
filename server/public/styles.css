@@ -102,7 +102,7 @@ p {
   padding-left: 200px;
   padding-right: 200px;
   padding-top: 0px;
-   
+  animation: fadeIn 3s;
   border-color:rgba(208, 224, 237, 0.809);
 
 }
