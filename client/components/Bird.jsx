@@ -14,8 +14,8 @@ function Bird({ position, data: birdData }) {
     birdData.Status === 5
       ? birdData.Sound_Level - 4
       : (birdData.Sound_Level - 4) * 2
-  const minDist = 5
-  const maxDist = 25
+  const minDist = 8
+  const maxDist = 22
 
   const [birdState, setBirdState] = useState({
     currentDist: 0,
@@ -82,6 +82,8 @@ function Bird({ position, data: birdData }) {
   const { fade } = useSpring({ fade: birdState.visible })
   const scale = fade.to([true, false], [1, 0.05])
 
+  const [hovered, setHovered] = useState(false)
+
   return (
     <a.mesh
       ref={bird}
@@ -89,9 +91,11 @@ function Bird({ position, data: birdData }) {
       rotation-y={rotation}
       scale={scale}
       onClick={handleClick}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={'SandyBrown'} />
+      <meshStandardMaterial color={hovered ? '#59981A' : '#39FF14'} />
       <Sound url={audioUrl} visible={birdState.visible} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
       {birdState.clicked && birdState.visible ? <Info data={birdData} /> : null}

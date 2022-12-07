@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     const handleEsc = (event) => {
-      if (event.keyCode === 27) {
+      if (event.keyCode === 82) {
         document.location.reload(false)
       }
     }
