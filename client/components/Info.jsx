@@ -3,12 +3,6 @@ import React from 'react'
 import { Html } from '@react-three/drei'
 
 function Info({ data }) {
-  // const birdObject = Object.keys(data).map((propertyName) => {
-  //   if (data[propertyName].length > 0) {
-  //     return `${propertyName}: ${data[propertyName]}\n`
-  //   }
-  // })
-
   let birdName = ''
 
   function pickName() {
@@ -25,9 +19,9 @@ function Info({ data }) {
       <div className="info">
         {' '}
         <h3>{birdName}</h3>
-        <p>{data.Media_Notes}</p>
+        {data.Media_Notes && <p>{data.Media_Notes}</p>}
         <div className="soundcredit">
-          <p>{data.Sound_Credit}</p>
+          {data.Soun_Credit && <p>{data.Sound_Credit}</p>}
         </div>
       </div>
     </Html>
