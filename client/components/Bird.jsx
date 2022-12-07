@@ -23,6 +23,7 @@ function Bird({ position, data: birdData }) {
     clicked: false,
     visible: true,
     phase: 5,
+    hovered: false,
   })
 
   // conditionally render animation and info
@@ -34,6 +35,7 @@ function Bird({ position, data: birdData }) {
         active: 0,
         clicked: false,
         currentDist: dist,
+        hovered: false
       })
     }
   })
@@ -49,6 +51,7 @@ function Bird({ position, data: birdData }) {
             active: 0,
             clicked: false,
             visible: false,
+            hovered: false
           })
         }
       }
@@ -71,8 +74,24 @@ function Bird({ position, data: birdData }) {
         clicked: !birdState.clicked,
         camDist: dist,
       })
-      console.log(Number(!birdState.active))
     }
+  }
+
+  function handleHoverIn() {
+    const dist = camera.position.distanceTo(bird.current.position)
+    if (dist < maxDist && dist > minDist && birdState.visible)
+      setBirdState({
+        ...birdState,
+        camDist: dist,
+        hovered: true
+      })
+  }
+
+  function handleHoverOut() {
+    setBirdState({
+      ...birdState,
+      hovered: false
+    })
   }
 
   // animation setup
@@ -82,8 +101,6 @@ function Bird({ position, data: birdData }) {
   const { fade } = useSpring({ fade: birdState.visible })
   const scale = fade.to([true, false], [1, 0.05])
 
-  const [hovered, setHovered] = useState(false)
-
   return (
     <a.mesh
       ref={bird}
@@ -91,11 +108,11 @@ function Bird({ position, data: birdData }) {
       rotation-y={rotation}
       scale={scale}
       onClick={handleClick}
-      onPointerOver={() => setHovered(true)}
-      onPointerOut={() => setHovered(false)}
+      onPointerOver={handleHoverIn}
+      onPointerOut={handleHoverOut}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? '#59981A' : '#39FF14'} />
+      <meshStandardMaterial color={birdState.hovered ? '#59981A' : '#39FF14'} />
       <Sound url={audioUrl} visible={birdState.visible} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
       {birdState.clicked && birdState.visible ? <Info data={birdData} /> : null}
