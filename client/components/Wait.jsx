@@ -18,8 +18,8 @@ function Wait() {
           Explore the Spring using the mouse. Click and hold the mouse button to
           zoom in. Click and hold the right mouse button to zoom out.
         </p>
-        <p>Press Esc to return to this screen.</p>
-        <h3>Press the Enter key to begin.</h3>
+        <p>Press &apos;R&apos; key to return to this screen.</p>
+        <h3>Press the &apos;Enter&apos; key to begin.</h3>
       </div>
     </>
   )
