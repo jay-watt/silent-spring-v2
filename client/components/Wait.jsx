@@ -8,12 +8,10 @@ function Wait() {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
+
       <div>
         <h1>WELCOME TO SILENT SPRING</h1>
-        <h2>
+        <h2 className="about">
           Listen to native bird recordings from Aotearoa with your preferred
           audio device
         </h2>
