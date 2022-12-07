@@ -11,29 +11,53 @@ body,
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-
-body {
-  font-family: 'Noticia Text', serif;
+  justify-content: center;
 }
 
 .container {
-  width: 20%;
-  margin: 0 auto;
-  padding: 8px;
-  font-family: 'Noticia Text', serif;
-  color: rgba(208, 224, 237, 0.809);
-  text-align: center;
-  background-color: rgba(190, 157, 129, 0.75);
-  border-radius: 10px;
+  display: flex;
+  width: 80%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  flex-wrap: wrap;
+}
 
+h1, h2 {
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+h2 {
+  padding-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.card {
+
+  width: 400px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.809);
+  background-color: rgba(190, 157, 129, 0.75);
 }
 
 .info {
   min-width: 1000px;
   height: 100%;
-  font-family: 'Noticia Text', serif;
+  font-family: 'Noto Sans', sans-serif;
   color: rgba(208, 224, 237, 0.809);
   font-size: 150px;
   display: block;
@@ -49,7 +73,7 @@ body {
   font-size:120px;
   min-width: 240de .0px;
   height: 100%;
-  font-family: 'Noticia Text', serif;
+  font-family: 'Noto Sans', sans-serif;
   color: rgba(208, 224, 237, 0.809);
   display: block;
   flex-direction:row; 
