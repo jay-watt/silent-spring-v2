@@ -18,6 +18,11 @@ body {
   font-family: 'Noticia Text', serif;
 }
 
+h1 {
+  font-family: 'Unica One', cursive;
+
+}
+
 .container {
   width: 20%;
   margin: 0 auto;
