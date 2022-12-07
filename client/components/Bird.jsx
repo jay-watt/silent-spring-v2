@@ -35,7 +35,7 @@ function Bird({ position, data: birdData }) {
         active: 0,
         clicked: false,
         currentDist: dist,
-        hovered: false
+        hovered: false,
       })
     }
   })
@@ -51,7 +51,7 @@ function Bird({ position, data: birdData }) {
             active: 0,
             clicked: false,
             visible: false,
-            hovered: false
+            hovered: false,
           })
         }
       }
@@ -79,19 +79,23 @@ function Bird({ position, data: birdData }) {
 
   function handleHoverIn() {
     const dist = camera.position.distanceTo(bird.current.position)
-    if (dist < maxDist && dist > minDist && birdState.visible)
-      // if (dist < maxDist && dist > minDist && birdState.visible && !birdState.clicked)
+    if (
+      dist < maxDist &&
+      dist > minDist &&
+      birdState.visible &&
+      !birdState.clicked
+    )
       setBirdState({
         ...birdState,
         camDist: dist,
-        hovered: true
+        hovered: true,
       })
   }
 
   function handleHoverOut() {
     setBirdState({
       ...birdState,
-      hovered: false
+      hovered: false,
     })
   }
 
