@@ -20,22 +20,33 @@ function Bird({ position, data: birdData }) {
   const [birdState, setBirdState] = useState({
     currentDist: 0,
     active: 0,
-    clicked: false,
+    selected: false,
     visible: true,
     phase: 5,
-    hovered: false,
   })
 
   // conditionally render animation and info
   useFrame(() => {
     const dist = camera.position.distanceTo(bird.current.position)
-    if (birdState.clicked && (dist > maxDist || dist < minDist)) {
+    if (birdState.selected && (dist > maxDist || dist < minDist)) {
       setBirdState({
         ...birdState,
         active: 0,
-        clicked: false,
+        selected: false,
         currentDist: dist,
-        hovered: false,
+      })
+    }
+    if (
+      dist < maxDist &&
+      dist > minDist &&
+      birdState.visible &&
+      !birdState.selected
+    ) {
+      setBirdState({
+        ...birdState,
+        active: Number(!birdState.active),
+        selected: true,
+        camDist: dist,
       })
     }
   })
@@ -49,9 +60,8 @@ function Bird({ position, data: birdData }) {
           setBirdState({
             ...birdState,
             active: 0,
-            clicked: false,
+            selected: false,
             visible: false,
-            hovered: false,
           })
         }
       }
@@ -64,41 +74,6 @@ function Bird({ position, data: birdData }) {
     }
   }, [birdState.phase])
 
-  // show info if bird correct distance from camera
-  function handleClick() {
-    const dist = camera.position.distanceTo(bird.current.position)
-    if (dist < maxDist && dist > minDist && birdState.visible) {
-      setBirdState({
-        ...birdState,
-        active: Number(!birdState.active),
-        clicked: !birdState.clicked,
-        camDist: dist,
-      })
-    }
-  }
-
-  function handleHoverIn() {
-    const dist = camera.position.distanceTo(bird.current.position)
-    if (
-      dist < maxDist &&
-      dist > minDist &&
-      birdState.visible &&
-      !birdState.clicked
-    )
-      setBirdState({
-        ...birdState,
-        camDist: dist,
-        hovered: true,
-      })
-  }
-
-  function handleHoverOut() {
-    setBirdState({
-      ...birdState,
-      hovered: false,
-    })
-  }
-
   // animation setup
   const { spring } = useSpring({ spring: birdState.active })
   const rotation = spring.to([0, 1], [0, Math.PI])
@@ -107,20 +82,14 @@ function Bird({ position, data: birdData }) {
   const scale = fade.to([true, false], [1, 0.05])
 
   return (
-    <a.mesh
-      ref={bird}
-      position={position}
-      rotation-y={rotation}
-      scale={scale}
-      onClick={handleClick}
-      onPointerOver={handleHoverIn}
-      onPointerOut={handleHoverOut}
-    >
+    <a.mesh ref={bird} position={position} rotation-y={rotation} scale={scale}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={birdState.hovered ? '#59981A' : '#39FF14'} />
+      <meshStandardMaterial color="#59981A" />
       <Sound url={audioUrl} visible={birdState.visible} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
-      {birdState.clicked && birdState.visible ? <Info data={birdData} /> : null}
+      {birdState.selected && birdState.visible ? (
+        <Info data={birdData} />
+      ) : null}
     </a.mesh>
   )
 }
