@@ -10,16 +10,20 @@ function Bird({ position, data: birdData }) {
   const bird = useRef(null)
   const { camera } = useThree()
   const audioUrl = `./server/public/audio/${birdData.Sound_Id}.mp3`
-  const minDist = 5
-  const maxDist = 25
+  const volAdjust =
+    birdData.Status === 5
+      ? birdData.Sound_Level - 4
+      : (birdData.Sound_Level - 4) * 2
+  const minDist = 8
+  const maxDist = 22
 
-  // const [phase, setPhase] = useState(5)
   const [birdState, setBirdState] = useState({
     currentDist: 0,
     active: 0,
     clicked: false,
     visible: true,
-    phase: 5
+    phase: 5,
+    hovered: false,
   })
 
   // conditionally render animation and info
@@ -31,6 +35,7 @@ function Bird({ position, data: birdData }) {
         active: 0,
         clicked: false,
         currentDist: dist,
+        hovered: false,
       })
     }
   })
@@ -40,8 +45,14 @@ function Bird({ position, data: birdData }) {
     const handleRemove = (event) => {
       if (event.key === ' ') {
         setBirdState({ ...birdState, phase: birdState.phase - 1 })
-        if (birdState.visible && (birdData.Status === birdState.phase)) {
-          setBirdState({ ...birdState, active: 0, clicked: false, visible: false })
+        if (birdState.visible && birdData.Status === birdState.phase) {
+          setBirdState({
+            ...birdState,
+            active: 0,
+            clicked: false,
+            visible: false,
+            hovered: false,
+          })
         }
       }
     }
@@ -66,29 +77,50 @@ function Bird({ position, data: birdData }) {
     }
   }
 
+  function handleHoverIn() {
+    const dist = camera.position.distanceTo(bird.current.position)
+    if (
+      dist < maxDist &&
+      dist > minDist &&
+      birdState.visible &&
+      !birdState.clicked
+    )
+      setBirdState({
+        ...birdState,
+        camDist: dist,
+        hovered: true,
+      })
+  }
+
+  function handleHoverOut() {
+    setBirdState({
+      ...birdState,
+      hovered: false,
+    })
+  }
+
   // animation setup
-  const { spring } = useSpring({
-    spring: birdState.active,
-    config: { mass: 5, tension: 400, friction: 50, precision: 0.0001 },
-  })
-  const scale = spring.to([0, 1], [1, 5])
+  const { spring } = useSpring({ spring: birdState.active })
   const rotation = spring.to([0, 1], [0, Math.PI])
+
+  const { fade } = useSpring({ fade: birdState.visible })
+  const scale = fade.to([true, false], [1, 0.05])
 
   return (
     <a.mesh
       ref={bird}
       position={position}
       rotation-y={rotation}
-      scale-x={scale}
-      scale-z={scale}
+      scale={scale}
       onClick={handleClick}
-      visible={birdState.visible ? true : false}
+      onPointerOver={handleHoverIn}
+      onPointerOut={handleHoverOut}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={"hotpink"} />
-      <Sound url={audioUrl} visible={birdState.visible} vol={1} />
+      <meshStandardMaterial color={birdState.hovered ? '#59981A' : '#39FF14'} />
+      <Sound url={audioUrl} visible={birdState.visible} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
-      {(birdState.clicked && birdState.visible) ? <Info data={birdData} /> : null}
+      {birdState.clicked && birdState.visible ? <Info data={birdData} /> : null}
     </a.mesh>
   )
 }
