@@ -36,8 +36,8 @@ function Birds() {
           <spotLight position={[10, 10, 10]} angle={0.95} penumbra={1} />
           <pointLight position={[-10, -10, -10]} />
           <mesh position={[0, 0, 0]}>
-            <sphereGeometry args={[sceneRadius, 100, 100]} />
-            <meshStandardMaterial wireframe={true} color={'blue'} />
+            <sphereGeometry args={[sceneRadius, 30, 16]} />
+            <meshStandardMaterial wireframe={true} color={'#e4e2e0'} />
           </mesh>
           {data.map((data, idx) => {
             if (idx < 5) {
