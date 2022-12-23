@@ -15,14 +15,12 @@ function Info({ data }) {
   pickName()
 
   return (
-    <Html distanceFactor={2} position={[0, 2, 0]}>
+    <Html distanceFactor={2} position={[0, 0, 0]}>
       <div className="info">
-        {' '}
-        <h3>{birdName}</h3>
+        <p>
+          <b>{birdName}</b>
+        </p>
         {data.Media_Notes && <p>{data.Media_Notes}</p>}
-        <div className="soundcredit">
-          {data.Soun_Credit && <p>{data.Sound_Credit}</p>}
-        </div>
       </div>
     </Html>
   )

@@ -3,6 +3,7 @@ html {
   width: 100%;
   margin: 0;
   background-color: white;
+  color: #0071bc;
 }
 
 body,
@@ -27,9 +28,7 @@ body,
 
 h1 {
   text-align: center;
-  color: #0071bc;
   font-size: 80px;
-  text-shadow: 2px 2px #1f2c19;
   animation: fadeIn 0.1s;
 }
 
@@ -54,11 +53,8 @@ h2 {
   color: white;
   padding-left: 50px;
   padding-right: 50px;
-  animation: fadeIn 10s;
-}
-
-p {
   font-size: 20px;
+  animation: fadeIn 10s;
 }
 
 .canvasDiv {
@@ -66,43 +62,15 @@ p {
 }
 
 
-
-
-
-.interaction {
-  text-shadow: 2px 2px #324b72;
-}
-
-
 .info {
   min-width: 5000px;
   height: 100%;
   font-family: 'Noto Sans', sans-serif;
-  color: rgba(208, 224, 237, 0.809);
   font-size: 240px;
-  display: block;
-  flex-direction:row; 
-  color: rgba(208, 224, 237, 0.809);
-  background-color: rgba(88, 111, 124, 0.75);
-  border-style: solid;
+  border: solid 30px;
   border-radius: 50px;
-  border-width: 30px;
   padding-left: 200px;
   padding-right: 200px;
   padding-top: 0px;
   animation: fadeIn 3s;
-  border-color:rgba(208, 224, 237, 0.809);
 }
-
-.soundcredit {
-  font-size:220px;
-  min-width: 5000px;
-  height: 100%;
-  font-family: 'Noto Sans', sans-serif;
-  color: rgba(208, 224, 237, 0.809);
-  display: block;
-  flex-direction:row; 
-  box-shadow: 5px 5px 15px rgbrgba(138, 117, 173, 0.5);
-  border-radius: 30px;
-}
-

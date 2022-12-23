@@ -14,7 +14,7 @@ function Bird({ sceneRadius, position, data }) {
   const volAdjust =
     data.Status === 5 ? data.Sound_Level - 4 : (data.Sound_Level - 4) * 2
 
-  const maxDist = sceneRadius / 4
+  const maxDist = sceneRadius / 3
   const minDist = maxDist / 3
   const size = sceneRadius / 100
 
