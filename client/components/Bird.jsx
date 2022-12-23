@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import React, { useRef, useState, useEffect } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { a, useSpring } from '@react-spring/three'
+import { a, useSpring, config } from '@react-spring/three'
 
 import Sound from './Sound'
 import Info from './Info'
@@ -9,34 +9,27 @@ import Info from './Info'
 function Bird({ position, data: birdData }) {
   const bird = useRef(null)
   const { camera } = useThree()
+
   const audioUrl = `./server/public/audio/${birdData.Sound_Id}.mp3`
   const volAdjust =
     birdData.Status === 5
       ? birdData.Sound_Level - 4
       : (birdData.Sound_Level - 4) * 2
+
   const minDist = 8
   const maxDist = 22
 
-  const [birdState, setBirdState] = useState({
-    currentDist: 0,
-    active: 0,
-    clicked: false,
-    visible: true,
-    phase: 5,
-    hovered: false,
-  })
+  const [selected, setSelected] = useState(0)
+  const [visible, setVisible] = useState({ bool: 1, phase: 5 })
 
   // conditionally render animation and info
   useFrame(() => {
     const dist = camera.position.distanceTo(bird.current.position)
-    if (birdState.clicked && (dist > maxDist || dist < minDist)) {
-      setBirdState({
-        ...birdState,
-        active: 0,
-        clicked: false,
-        currentDist: dist,
-        hovered: false,
-      })
+    if (selected && (dist > maxDist || dist < minDist)) {
+      setSelected(0)
+    }
+    if (dist < maxDist && dist > minDist && visible.bool && !selected) {
+      setSelected(1)
     }
   })
 
@@ -44,83 +37,48 @@ function Bird({ position, data: birdData }) {
   useEffect(() => {
     const handleRemove = (event) => {
       if (event.key === ' ') {
-        setBirdState({ ...birdState, phase: birdState.phase - 1 })
-        if (birdState.visible && birdData.Status === birdState.phase) {
-          setBirdState({
-            ...birdState,
-            active: 0,
-            clicked: false,
-            visible: false,
-            hovered: false,
+        setVisible({ ...visible, phase: visible.phase - 1 })
+        if (visible.bool && birdData.Status === visible.phase) {
+          setVisible({
+            ...visible,
+            bool: 0,
           })
+          setSelected(0)
         }
       }
     }
     document.addEventListener('keydown', handleRemove)
-    if (birdState.phase === 1) {
+    if (visible.phase === 1) {
       return () => {
         document.removeEventListener('keydown', handleRemove)
       }
     }
-  }, [birdState.phase])
-
-  // show info if bird correct distance from camera
-  function handleClick() {
-    const dist = camera.position.distanceTo(bird.current.position)
-    if (dist < maxDist && dist > minDist && birdState.visible) {
-      setBirdState({
-        ...birdState,
-        active: Number(!birdState.active),
-        clicked: !birdState.clicked,
-        camDist: dist,
-      })
-    }
-  }
-
-  function handleHoverIn() {
-    const dist = camera.position.distanceTo(bird.current.position)
-    if (
-      dist < maxDist &&
-      dist > minDist &&
-      birdState.visible &&
-      !birdState.clicked
-    )
-      setBirdState({
-        ...birdState,
-        camDist: dist,
-        hovered: true,
-      })
-  }
-
-  function handleHoverOut() {
-    setBirdState({
-      ...birdState,
-      hovered: false,
-    })
-  }
-
+  }, [visible.phase])
+  // TODO make text popup fade out
   // animation setup
-  const { spring } = useSpring({ spring: birdState.active })
-  const rotation = spring.to([0, 1], [0, Math.PI])
+  const { selectedFade } = useSpring({
+    selectedFade: selected,
+    config: { ...config.slow, duration: 1000 },
+  })
+  const opacity = selectedFade.to([0, 1], [1, 0.3])
 
-  const { fade } = useSpring({ fade: birdState.visible })
-  const scale = fade.to([true, false], [1, 0.05])
+  const { visibleFade } = useSpring({
+    visibleFade: visible.bool,
+    config: { ...config.slow, duration: 2000 },
+  })
+  const scale = visibleFade.to([1, 0], [1.0, 0.0])
 
   return (
-    <a.mesh
-      ref={bird}
-      position={position}
-      rotation-y={rotation}
-      scale={scale}
-      onClick={handleClick}
-      onPointerOver={handleHoverIn}
-      onPointerOut={handleHoverOut}
-    >
+    <a.mesh ref={bird} position={position} scale={scale}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={'#0071bc'} />
-      <Sound url={audioUrl} visible={birdState.visible} volAdjust={volAdjust} />
+      <a.meshStandardMaterial
+        color={'#0071bc'}
+        transparent={true}
+        opacity={opacity}
+      />
+      <Sound url={audioUrl} visible={visible.bool} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
-      {birdState.clicked && birdState.visible ? <Info data={birdData} /> : null}
+      {selected && visible.bool ? <Info data={birdData} /> : null}
     </a.mesh>
   )
 }
