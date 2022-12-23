@@ -117,7 +117,7 @@ function Bird({ position, data: birdData }) {
       onPointerOut={handleHoverOut}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={birdState.hovered ? '#59981A' : '#39FF14'} />
+      <meshStandardMaterial color={'#0071bc'} />
       <Sound url={audioUrl} visible={birdState.visible} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
       {birdState.clicked && birdState.visible ? <Info data={birdData} /> : null}

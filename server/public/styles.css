@@ -6,11 +6,7 @@ body,
   height: 100%;
   width: 100%;
   padding: 0;
-  background-image:url('./audio/lightgrey.jpg');
-  background-blend-mode: multiply;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: white;
   justify-content: center;
 }
 
@@ -21,7 +17,7 @@ html {
 h1 {
   font-family: 'Unica One', cursive;
   text-align: center;
-color: #39FF14;
+color: #0071bc;
 animation: fadeIn 0.1s
 }
 
@@ -37,7 +33,6 @@ animation: fadeIn 0.1s
   margin: auto;
   flex-wrap: wrap;
   animation: fadeIn 5s;
-  /* background-color: rgb(205, 255, 223); */
 }
 
 h2 {
