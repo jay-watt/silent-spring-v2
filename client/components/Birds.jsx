@@ -27,7 +27,7 @@ function Birds() {
     const z = getRandomInt(maxPosition)
     return [x, y, z]
   }
-
+  // TODO change sphere wireframe from tri to quad
   return (
     <>
       {data.length > 0 ? (
@@ -36,7 +36,7 @@ function Birds() {
           <spotLight position={[10, 10, 10]} angle={0.95} penumbra={1} />
           <pointLight position={[-10, -10, -10]} />
           <mesh position={[0, 0, 0]}>
-            <sphereGeometry args={[sceneRadius, 30, 10]} />
+            <sphereGeometry args={[sceneRadius, 100, 100]} />
             <meshStandardMaterial wireframe={true} color={'blue'} />
           </mesh>
           {data.map((data, idx) => {
