@@ -7,6 +7,8 @@ import Controls from './Controls'
 import { fetchBirds } from '../api'
 
 function Birds() {
+  const sceneRadius = 200
+  const maxPosition = sceneRadius * 0.75
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -20,23 +22,29 @@ function Birds() {
   }
 
   function getRandomCoords() {
-    const x = getRandomInt(200)
-    const y = getRandomInt(100)
-    const z = getRandomInt(100)
+    const x = getRandomInt(maxPosition)
+    const y = getRandomInt(maxPosition)
+    const z = getRandomInt(maxPosition)
     return [x, y, z]
   }
 
   return (
     <>
       {data.length > 0 ? (
-        <Canvas camera={{ position: [0, 0, 100] }}>
+        <Canvas camera={{ position: [0, 0, sceneRadius * 1.5] }}>
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.95} penumbra={1} />
           <pointLight position={[-10, -10, -10]} />
-          {data.map((data) => {
-            return (
-              <Bird key={data.id} position={getRandomCoords()} data={data} />
-            )
+          <mesh position={[0, 0, 0]}>
+            <sphereGeometry args={[sceneRadius, 30, 10]} />
+            <meshStandardMaterial wireframe={true} color={'blue'} />
+          </mesh>
+          {data.map((data, idx) => {
+            if (idx < 5) {
+              return (
+                <Bird key={data.id} position={getRandomCoords()} data={data} />
+              )
+            }
           })}
           <Controls />
         </Canvas>
