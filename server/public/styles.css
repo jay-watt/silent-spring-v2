@@ -1,60 +1,19 @@
-html,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: white;
+}
+
 body,
 #root,
 .mainDiv,
 #app {
+  position: absolute;
+  top: 0;
   height: 100%;
   width: 100%;
-  padding: 0;
   margin: 0;
-  background-color: white;
-  justify-content: center;
-}
-
-html {
-  overflow: hidden;
-}
-
-h1 {
-  font-family: 'Unica One', cursive;
-  text-align: center;
-  color: #0071bc;
-  animation: fadeIn 0.1s;
-}
-
-.about {
-  animation: fadeIn 5s;
-}
-
-.container {
-  display: flex;
-  width: 60%;
-  flex-direction: row;
-  justify-content: center;
-  margin: auto;
-  flex-wrap: wrap;
-  animation: fadeIn 5s;
-}
-
-h2 {
-  font-family: 'Noto Sans', sans-serif;
-  text-align: center;
-  color: rgba(208, 224, 237, 0.809);
-  padding-bottom: 20px;
-}
-
-h1 {
-  font-size: 80px;
-  text-shadow: 2px 2px #1f2c19;
-}
-
-.interaction {
-  text-shadow: 2px 2px #324b72;
-}
-
-p {
-  text-align: center;
-  padding-bottom: 20px;
 }
 
 @keyframes fadeIn {
@@ -62,25 +21,58 @@ p {
   100% { opacity: 1; }
 }
 
-.card {
-  width: 400px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 18px;
-  color: rgba(208, 224, 237, 0.809);
-  background-color: rgba(88, 111, 124, 0.75);
-  border-style: solid;
-  border-radius: 10px;
-  border-width: 5px; 
-  border-color:rgba(208, 224, 237, 0.809);
+.landing {
+  animation: fadeIn 5s;
 }
+
+h1 {
+  text-align: center;
+  color: #0071bc;
+  font-size: 80px;
+  text-shadow: 2px 2px #1f2c19;
+  animation: fadeIn 0.1s;
+}
+
+h2 {
+  text-align: center;
+}
+
+.explore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0px;
+}
+
+.instructions {
+  background-color: #0071bc;
+  color: white;
+  padding-left: 50px;
+  padding-right: 50px;
+  animation: fadeIn 10s;
+}
+
+p {
+  font-size: 20px;
+}
+
+.canvasDiv {
+  height: 100%;
+}
+
+
+
+
+
+.interaction {
+  text-shadow: 2px 2px #324b72;
+}
+
 
 .info {
   min-width: 5000px;
@@ -112,16 +104,5 @@ p {
   flex-direction:row; 
   box-shadow: 5px 5px 15px rgbrgba(138, 117, 173, 0.5);
   border-radius: 30px;
-}
-
-.instructions {
-  background-color: #0071bc;
-  color: white;
-  border: hidden;
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
 }
 

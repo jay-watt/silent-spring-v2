@@ -28,7 +28,7 @@ function Birds() {
   }
   // TODO change sphere wireframe from tri to quad
   return (
-    <>
+    <div className="canvasDiv">
       {data.length > 0 ? (
         <Canvas camera={{ position: [0, 0, sceneRadius * 2] }}>
           <ambientLight intensity={0.5} />
@@ -41,22 +41,24 @@ function Birds() {
               color={'#0071bc'}
             />
           </mesh>
-          {data.map((data) => {
-            return (
-              <Bird
-                key={data.id}
-                sceneRadius={sceneRadius}
-                position={getRandomCoords()}
-                data={data}
-              />
-            )
+          {data.map((data, idx) => {
+            if (idx < 10) {
+              return (
+                <Bird
+                  key={data.id}
+                  sceneRadius={sceneRadius}
+                  position={getRandomCoords()}
+                  data={data}
+                />
+              )
+            }
           })}
           <Controls />
         </Canvas>
       ) : (
         <br />
       )}
-    </>
+    </div>
   )
 }
 export default Birds

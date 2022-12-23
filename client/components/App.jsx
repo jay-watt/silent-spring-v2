@@ -32,18 +32,16 @@ function App() {
       document.removeEventListener('keydown', handleEnter)
     }
   }, [])
+
   //TODO add delay and fade to instructions render
-  return (
-    <div className="mainDiv">
-      {isPlaying ? (
-        <>
-          <Instructions />
-          <Birds />
-        </>
-      ) : (
-        <Wait />
-      )}
+
+  return isPlaying ? (
+    <div className="explore">
+      <Instructions />
+      <Birds />
     </div>
+  ) : (
+    <Wait />
   )
 }
 
