@@ -20,19 +20,17 @@ function Bird({ position, data: birdData }) {
   const [birdState, setBirdState] = useState({
     currentDist: 0,
     active: 0,
-    selected: false,
-    visible: true,
+    visible: 1,
     phase: 5,
   })
 
   // conditionally render animation and info
   useFrame(() => {
     const dist = camera.position.distanceTo(bird.current.position)
-    if (birdState.selected && (dist > maxDist || dist < minDist)) {
+    if (birdState.active && (dist > maxDist || dist < minDist)) {
       setBirdState({
         ...birdState,
         active: 0,
-        selected: false,
         currentDist: dist,
       })
     }
@@ -40,12 +38,11 @@ function Bird({ position, data: birdData }) {
       dist < maxDist &&
       dist > minDist &&
       birdState.visible &&
-      !birdState.selected
+      !birdState.active
     ) {
       setBirdState({
         ...birdState,
-        active: Number(!birdState.active),
-        selected: true,
+        active: 1,
         camDist: dist,
       })
     }
@@ -60,8 +57,7 @@ function Bird({ position, data: birdData }) {
           setBirdState({
             ...birdState,
             active: 0,
-            selected: false,
-            visible: false,
+            visible: 0,
           })
         }
       }
@@ -76,20 +72,22 @@ function Bird({ position, data: birdData }) {
 
   // animation setup
   const { spring } = useSpring({ spring: birdState.active })
-  const rotation = spring.to([0, 1], [0, Math.PI])
+  const opacity = spring.to([0, 1], [1, 0.3])
 
   const { fade } = useSpring({ fade: birdState.visible })
-  const scale = fade.to([true, false], [1, 0.05])
+  const scale = fade.to([1, 0], [1.0, 0.05])
 
   return (
-    <a.mesh ref={bird} position={position} rotation-y={rotation} scale={scale}>
+    <a.mesh ref={bird} position={position} scale={scale}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="#59981A" />
+      <a.meshStandardMaterial
+        color={'blue'}
+        transparent={true}
+        opacity={opacity}
+      />
       <Sound url={audioUrl} visible={birdState.visible} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
-      {birdState.selected && birdState.visible ? (
-        <Info data={birdData} />
-      ) : null}
+      {birdState.active && birdState.visible ? <Info data={birdData} /> : null}
     </a.mesh>
   )
 }
