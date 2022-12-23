@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import Birds from './Birds'
+import Instructions from './Instructions'
 import Wait from './Wait'
 
 function App() {
@@ -31,8 +32,19 @@ function App() {
       document.removeEventListener('keydown', handleEnter)
     }
   }, [])
-
-  return <div className="mainDiv">{isPlaying ? <Birds /> : <Wait />}</div>
+  //TODO add delay and fade to instructions render
+  return (
+    <div className="mainDiv">
+      {isPlaying ? (
+        <>
+          <Instructions />
+          <Birds />
+        </>
+      ) : (
+        <Wait />
+      )}
+    </div>
+  )
 }
 
 export default App

@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 
+import { fetchBirds } from '../api'
 import Bird from './Bird'
 import Controls from './Controls'
-import { fetchBirds } from '../api'
 
 function Birds() {
   const sceneRadius = 100
@@ -41,17 +41,15 @@ function Birds() {
               color={'#0071bc'}
             />
           </mesh>
-          {data.map((data, idx) => {
-            if (idx < 10) {
-              return (
-                <Bird
-                  key={data.id}
-                  sceneRadius={sceneRadius}
-                  position={getRandomCoords()}
-                  data={data}
-                />
-              )
-            }
+          {data.map((data) => {
+            return (
+              <Bird
+                key={data.id}
+                sceneRadius={sceneRadius}
+                position={getRandomCoords()}
+                data={data}
+              />
+            )
           })}
           <Controls />
         </Canvas>
