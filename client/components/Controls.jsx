@@ -16,11 +16,13 @@ function Controls() {
     <FirstPersonControls
       ref={controls}
       activeLook={true}
-      movementSpeed={10}
-      lookSpeed={0.01}
-      constrainVertical={true}
-      verticalMax={Math.PI - 0.25}
-      verticalMin={0.25}
+      movementSpeed={30}
+      lookSpeed={0.03}
+      // movementSpeed={10}
+      // lookSpeed={0.01}
+      // constrainVertical={true}
+      // verticalMax={Math.PI - 0.25}
+      // verticalMin={0.25}
       target={controls.target}
       args={[camera, gl.domElement]}
     />
