@@ -6,7 +6,7 @@ import { a, useSpring, config } from '@react-spring/three'
 import Sound from './Sound'
 import Info from './Info'
 
-function Bird({ sceneRadius, position, data }) {
+export default function DataObj({ sceneRadius, position, data }) {
   const bird = useRef(null)
   const { camera } = useThree()
 
@@ -81,5 +81,3 @@ function Bird({ sceneRadius, position, data }) {
     </a.mesh>
   )
 }
-
-export default Bird

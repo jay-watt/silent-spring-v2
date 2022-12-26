@@ -22,6 +22,7 @@ body,
   100% { opacity: 1; }
 }
 
+/* LANDING PAGE */
 .landing {
   animation: fadeIn 5s;
 }
@@ -36,31 +37,97 @@ h2 {
   text-align: center;
 }
 
-.explore {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0px;
+/* MAIN PAGE */
+
+/* frame */
+.frameContainer {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5% auto 5%;
+  grid-template-rows: 10% auto 10%;
+  gap: 0px 0px;
 }
 
-.instructions {
-  background-color: #0071bc;
+/* row #1 */
+.corner-1 {
+  background-color: blue !important;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.frameHeader {
+  background-color: green !important;
   color: white;
-  padding-left: 50px;
-  padding-right: 50px;
-  font-size: 20px;
-  animation: fadeIn 10s;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
-.canvasDiv {
+.corner-2 {
+  background-color: blue !important;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+/* row #2 */
+.frameLeft {
+  background-color: green !important;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.frameInner {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.frameRight {
+  background-color: green !important;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+/* row #3 */
+.corner-3 {
+  background-color: blue !important;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.frameFooter {
+  background-color: green !important;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.corner-4 {
+  background-color: blue !important;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+/* scene */
+Canvas {
   height: 100%;
 }
-
 
 .info {
   min-width: 5000px;

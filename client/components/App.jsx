@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-import Birds from './Birds'
-import Instructions from './Instructions'
-import Wait from './Wait'
+import Frame from './Frame'
+import Landing from './Landing'
 
-function App() {
-  const [isPlaying, setIsPlaying] = useState(false)
+export default function App() {
+  const [playAudio, setPlayAudio] = useState(false)
 
+  // TODO check esc function
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.keyCode === 82) {
@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     const handleEnter = (event) => {
       if (event.keyCode === 13) {
-        setIsPlaying(true)
+        setPlayAudio(true)
       }
     }
     document.addEventListener('keydown', handleEnter)
@@ -33,16 +33,5 @@ function App() {
     }
   }, [])
 
-  //TODO add delay and fade to instructions render
-
-  return isPlaying ? (
-    <div className="explore">
-      <Instructions />
-      <Birds />
-    </div>
-  ) : (
-    <Wait />
-  )
+  return playAudio ? <Frame /> : <Landing />
 }
-
-export default App

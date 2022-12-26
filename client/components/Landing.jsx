@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Wait() {
+export default function Landing() {
   return (
     <div className="landing">
       <h1>WELCOME TO SILENT SPRING</h1>
@@ -13,5 +13,3 @@ function Wait() {
     </div>
   )
 }
-
-export default Wait
