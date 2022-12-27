@@ -6,18 +6,17 @@ import { a, useSpring, config } from '@react-spring/three'
 import Sound from './Sound'
 import Info from './Info'
 
-function Bird({ position, data: birdData }) {
+export default function DataObj({ sceneRadius, position, data }) {
   const bird = useRef(null)
   const { camera } = useThree()
 
-  const audioUrl = `./server/public/audio/${birdData.Sound_Id}.mp3`
+  const audioUrl = `./server/public/audio/${data.Sound_Id}.mp3`
   const volAdjust =
-    birdData.Status === 5
-      ? birdData.Sound_Level - 4
-      : (birdData.Sound_Level - 4) * 2
+    data.Status === 5 ? data.Sound_Level - 4 : (data.Sound_Level - 4) * 2
 
-  const minDist = 8
-  const maxDist = 22
+  const maxDist = sceneRadius / 3
+  const minDist = maxDist / 3
+  const size = sceneRadius / 100
 
   const [selected, setSelected] = useState(0)
   const [visible, setVisible] = useState({ bool: 1, phase: 5 })
@@ -38,7 +37,7 @@ function Bird({ position, data: birdData }) {
     const handleRemove = (event) => {
       if (event.key === ' ') {
         setVisible({ ...visible, phase: visible.phase - 1 })
-        if (visible.bool && birdData.Status === visible.phase) {
+        if (visible.bool && data.Status === visible.phase) {
           setVisible({
             ...visible,
             bool: 0,
@@ -70,7 +69,7 @@ function Bird({ position, data: birdData }) {
 
   return (
     <a.mesh ref={bird} position={position} scale={scale}>
-      <boxGeometry args={[1, 1, 1]} />
+      <boxGeometry args={[size, size, size]} />
       <a.meshStandardMaterial
         color={'#0071bc'}
         transparent={true}
@@ -78,9 +77,7 @@ function Bird({ position, data: birdData }) {
       />
       <Sound url={audioUrl} visible={visible.bool} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
-      {selected && visible.bool ? <Info data={birdData} /> : null}
+      {selected && visible.bool ? <Info data={data} /> : null}
     </a.mesh>
   )
 }
-
-export default Bird
