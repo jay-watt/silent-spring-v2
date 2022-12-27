@@ -38,8 +38,6 @@ h2 {
 }
 
 /* MAIN PAGE */
-
-/* frame */
 .frameContainer {
   height: 100%;
   width: 100%;
@@ -47,9 +45,9 @@ h2 {
   grid-template-columns: 5% auto 5%;
   grid-template-rows: 10% auto 10%;
   gap: 0px 0px;
+  animation: fadeIn 30s;
 }
 
-/* row #1 */
 .corner-1 {
   background-color: blue !important;
   grid-column-start: 1;
@@ -75,7 +73,6 @@ h2 {
   grid-row-end: 2;
 }
 
-/* row #2 */
 .frameLeft {
   background-color: green !important;
   grid-column-start: 1;
@@ -84,12 +81,29 @@ h2 {
   grid-row-end: 3;
 }
 
+/* scene elements START */
 .frameInner {
+  border: solid 10px red;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
+  animation: fadeIn 10s;
 }
+
+.info {
+  min-width: 5000px;
+  height: 100%;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 240px;
+  border: solid 30px;
+  border-radius: 50px;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 0px;
+  animation: fadeIn 3s;
+}
+/* scene elements END */
 
 .frameRight {
   background-color: green !important;
@@ -99,7 +113,6 @@ h2 {
   grid-row-end: 3;
 }
 
-/* row #3 */
 .corner-3 {
   background-color: blue !important;
   grid-column-start: 1;
@@ -122,22 +135,4 @@ h2 {
   grid-column-end: 4;
   grid-row-start: 3;
   grid-row-end: 4;
-}
-
-/* scene */
-Canvas {
-  height: 100%;
-}
-
-.info {
-  min-width: 5000px;
-  height: 100%;
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 240px;
-  border: solid 30px;
-  border-radius: 50px;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-top: 0px;
-  animation: fadeIn 3s;
 }
