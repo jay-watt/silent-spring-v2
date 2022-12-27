@@ -20,7 +20,7 @@ export default function Instructions() {
           <b>SPACE</b> fast forward
         </div>
         <div className="instructionsItem">
-          <b>R</b> return to homepage
+          <b>ESC</b> return to homepage
         </div>
       </div>
     </>

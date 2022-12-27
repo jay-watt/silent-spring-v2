@@ -29,6 +29,19 @@ export default function App() {
     }
   }, [])
 
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) {
+        setEnterReq(false)
+      }
+    }
+    document.addEventListener('keydown', handleEsc)
+
+    return () => {
+      document.removeEventListener('keydown', handleEsc)
+    }
+  }, [])
+
   return (
     <div className="frameContainer">
       {enterReq ? (
