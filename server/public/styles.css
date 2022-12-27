@@ -22,19 +22,14 @@ body,
   100% { opacity: 1; }
 }
 
-/* LANDING PAGE */
-.landing {
-  animation: fadeIn 5s;
-}
-
 h1 {
-  text-align: center;
   font-size: 80px;
-  animation: fadeIn 0.1s;
 }
 
-h2 {
+h1, h2 {
   text-align: center;
+  color: #0071bc;
+  animation: fadeIn 5s;
 }
 
 /* MAIN PAGE */
@@ -42,59 +37,53 @@ h2 {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 5% auto 5%;
+  grid-template-columns: 2% auto 2%;
   grid-template-rows: 10% auto 10%;
   gap: 0px 0px;
-  animation: fadeIn 30s;
+  animation: fadeIn 1s;
 }
 
-.corner-1 {
-  background-color: blue !important;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+/* instructions*/
+.frameHeader, .frameFooter {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 .frameHeader {
-  background-color: green !important;
-  color: white;
+  color: #0071bc;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
 }
 
-.corner-2 {
-  background-color: blue !important;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
+.frameFooter {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
 
-.frameLeft {
-  background-color: green !important;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
+.instructionsItem {
+  padding-top: 20px;
+  animation: fadeIn 2s;
 }
 
-/* scene elements START */
+/* scene */
 .frameInner {
-  border: solid 10px red;
+  border: solid 5px #0071bc;
+  border-radius: 10px;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-  animation: fadeIn 10s;
 }
 
 .info {
   min-width: 5000px;
   height: 100%;
-  font-family: 'Noto Sans', sans-serif;
   font-size: 240px;
   border: solid 30px;
   border-radius: 50px;
@@ -103,34 +92,44 @@ h2 {
   padding-top: 0px;
   animation: fadeIn 3s;
 }
-/* scene elements END */
+
+/* rest of frame */
+.frameLeft {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
 
 .frameRight {
-  background-color: green !important;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
 }
 
+.corner-1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.corner-2 {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
 .corner-3 {
-  background-color: blue !important;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 3;
   grid-row-end: 4;
 }
 
-.frameFooter {
-  background-color: green !important;
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
-}
-
 .corner-4 {
-  background-color: blue !important;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 3;

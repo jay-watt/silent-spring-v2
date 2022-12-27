@@ -18,11 +18,6 @@ function Controls() {
       activeLook={true}
       movementSpeed={30}
       lookSpeed={0.05}
-      // movementSpeed={10}
-      // lookSpeed={0.01}
-      // constrainVertical={true}
-      // verticalMax={Math.PI - 0.25}
-      // verticalMin={0.25}
       target={controls.target}
       args={[camera, gl.domElement]}
     />
