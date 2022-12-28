@@ -8,21 +8,19 @@ import Controls from './Controls'
 function Scene({ data }) {
   const size = 100
 
+  // object position helper functions
   const randomInt = (max) => Math.floor((Math.random() - 0.5) * max + 1)
   const randomCoords = () => [randomInt(size), randomInt(size), randomInt(size)]
 
-  // TODO change sphere wireframe from tri to quad
-  // TODO move coord helpers into seperate helper module
-
   return (
     <div className="frameInner">
-      <Canvas camera={{ position: [0, 0, size * 2] }}>
-        <ambientLight intensity={0.5} />
+      <Canvas camera={{ position: [0, 0, size * 1.8] }}>
+        <ambientLight intensity={1.0} />
         <mesh position={[0, 0, 0]}>
           <sphereGeometry args={[size, 100, 50]} />
           <meshStandardMaterial
             transparent={true}
-            opacity={0.1}
+            opacity={0.2}
             wireframe={true}
             color={'#0071bc'}
           />

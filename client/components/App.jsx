@@ -42,10 +42,12 @@ export default function App() {
     }
   }, [])
 
+  // TODO data.length === 0 loading screen
+
   return (
     <div className="frameContainer">
       {enterReq ? (
-        data.length && (
+        data.length > 0 && (
           <>
             <Scene data={data} />
             <Instructions />
