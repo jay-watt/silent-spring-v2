@@ -4,7 +4,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { a, useSpring, config } from '@react-spring/three'
 
 import Sound from './Sound'
-import Info from './Info'
+import ObjInfo from './ObjInfo'
 
 export default function DataObj({ sceneRadius, position, data }) {
   const bird = useRef(null)
@@ -53,31 +53,33 @@ export default function DataObj({ sceneRadius, position, data }) {
       }
     }
   }, [visible.phase])
-  // TODO make text popup fade out
+
+  // TODO fade out info popout
+
   // animation setup
   const { selectedFade } = useSpring({
     selectedFade: selected,
     config: { ...config.slow, duration: 1000 },
   })
-  const opacity = selectedFade.to([0, 1], [1, 0.3])
+  const objOpacity = selectedFade.to([0, 1], [1, 0.3])
 
   const { visibleFade } = useSpring({
     visibleFade: visible.bool,
     config: { ...config.slow, duration: 2000 },
   })
-  const scale = visibleFade.to([1, 0], [1.0, 0.0])
+  const objScale = visibleFade.to([1, 0], [1.0, 0.0])
 
   return (
-    <a.mesh ref={bird} position={position} scale={scale}>
+    <a.mesh ref={bird} position={position} scale={objScale}>
       <boxGeometry args={[size, size, size]} />
       <a.meshStandardMaterial
         color={'#0071bc'}
         transparent={true}
-        opacity={opacity}
+        opacity={objOpacity}
       />
       <Sound url={audioUrl} visible={visible.bool} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
-      {selected && visible.bool ? <Info data={data} /> : null}
+      {selected && visible.bool ? <ObjInfo data={data} /> : null}
     </a.mesh>
   )
 }

@@ -2,7 +2,7 @@
 import React from 'react'
 import { Html } from '@react-three/drei'
 
-function Info({ data }) {
+function ObjInfo({ data, scale }) {
   let birdName = ''
 
   function pickName() {
@@ -14,16 +14,21 @@ function Info({ data }) {
   }
   pickName()
 
+  // TODO put media notes in extra popout
+
   return (
-    <Html distanceFactor={2} position={[0, 0, 0]}>
+    <Html distanceFactor={2} position={[0, 0, 0]} scale={scale}>
       <div className="info">
-        <p>
-          <b>{birdName}</b>
-        </p>
-        {data.Media_Notes && <p>{data.Media_Notes}</p>}
+        <p2>{birdName}</p2>
+        {data.Media_Notes && (
+          <p2>
+            <br />
+            {data.Media_Notes}
+          </p2>
+        )}
       </div>
     </Html>
   )
 }
 
-export default Info
+export default ObjInfo

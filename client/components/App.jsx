@@ -42,7 +42,7 @@ export default function App() {
     }
   }, [])
 
-  // TODO data.length === 0 loading screen
+  // TODO add loading screen
 
   return (
     <div className="frameContainer">

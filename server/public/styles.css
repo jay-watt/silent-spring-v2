@@ -15,7 +15,7 @@ body,
   height: 100%;
   width: 100%;
   margin: 0;
-  font-family: 'Silkscreen', cursive;
+  font-family: 'Press Start 2P', cursive;
 }
 
 @keyframes fadeIn {
@@ -37,8 +37,8 @@ body,
 }
 
 h1 {
-  font-size: 7rem;
-  margin-top: 1rem;
+  font-size: 5rem;
+  margin-top: 2rem;
   margin-bottom: 8rem;
   text-shadow: 0.5rem 0 black;
   /* text-shadow:
@@ -54,8 +54,8 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
-  margin-top: 5rem;
+  font-size: 1.5rem;
+  margin-top: 4rem;
 }
 
 h1, h2 {
@@ -64,18 +64,25 @@ h1, h2 {
 }
 
 h3 {
-  font-size: 2.2rem;
+  color: black;
+  font-size: 1.5rem;
   text-align: center;
 }
 
+p {
+  font-size: 0.7rem;
+  color: black;
+}
+
 b {
-  color: #0071bc;
+  color: black;
   background-color: white;
-  border: double 6px #0071bc;
+  border: double 6px black;
   border-radius: 5px;
   padding-left: 0.2em;
   padding-right: 0.2em;
-  padding-bottom: 0.05em;
+  padding-top: 0.4em;
+  padding-bottom: 0.1em;
 }
 
 /* MAIN PAGE */
@@ -124,14 +131,18 @@ Canvas {
 }
 
 .info {
-  min-width: 5000px;
+  background-color: #0071bc;
+  color: white;
+  opacity: 0.8;
+  min-width: 4000px;
   height: 100%;
-  font-size: 240px;
-  border: solid 30px;
+  font-size: 160px;
+  border: hidden 30px;
   border-radius: 50px;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-top: 0px;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   animation: fadeIn 3s;
 }
 

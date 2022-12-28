@@ -5,22 +5,32 @@ export default function Instructions() {
     <>
       <div className="frameHeader">
         <div className="instructionsItem">
-          <b>MOVE CURSOR</b> look around
+          <p>
+            <b>MOVE CURSOR</b> look around
+          </p>
         </div>
         <div className="instructionsItem">
-          <b>LEFT CLICK</b> move forward
+          <p>
+            <b>LEFT CLICK</b> move forward
+          </p>
         </div>
         <div className="instructionsItem">
-          <b>RIGHT CLICK</b> move backward
+          <p>
+            <b>RIGHT CLICK</b> move backward
+          </p>
         </div>
       </div>
 
       <div className="frameFooter">
         <div className="instructionsItem">
-          <b>SPACE</b> fast forward
+          <p>
+            <b>SPACE</b> fast forward
+          </p>
         </div>
         <div className="instructionsItem">
-          <b>ESC</b> return to homepage
+          <p>
+            <b>ESC</b> return to homepage
+          </p>
         </div>
       </div>
     </>
