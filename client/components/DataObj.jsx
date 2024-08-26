@@ -53,6 +53,7 @@ export default function DataObj({ sceneRadius, position, data }) {
       }
     }
   }, [visible.phase])
+  
   // TODO make text popup fade out
   // animation setup
   const { selectedFade } = useSpring({

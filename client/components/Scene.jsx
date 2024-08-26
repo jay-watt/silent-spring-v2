@@ -28,16 +28,14 @@ function Scene({ data }) {
           />
         </mesh>
         {data.map((data, idx) => {
-          if (idx < 10) {
-            return (
-              <DataObj
-                key={data.id}
-                sceneRadius={size}
-                position={randomCoords()}
-                data={data}
-              />
-            )
-          }
+          return (
+            <DataObj
+              key={data.id}
+              sceneRadius={size}
+              position={randomCoords()}
+              data={data}
+            />
+          )
         })}
         <Controls />
       </Canvas>
