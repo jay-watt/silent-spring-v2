@@ -1,6 +1,14 @@
+# Node.js dependencies
 node_modules
-bundle.*
+
+# Logs
 *.log
+
+# SQLite databases
 *.sqlite3
+
+# Environment variables
 .env
-server/public/output.css
+
+# Package lock file
+package-lock.json
