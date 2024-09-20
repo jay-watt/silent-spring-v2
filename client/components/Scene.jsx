@@ -18,6 +18,7 @@ function Scene({ data }) {
     <div className="frameInner">
       <Canvas camera={{ position: [0, 0, size * 2] }}>
         <ambientLight intensity={0.5} />
+        <directionalLight position={[0, 10, 10]} intensity={1} />
         <mesh position={[0, 0, 0]}>
           <sphereGeometry args={[size, 100, 50]} />
           <meshStandardMaterial
