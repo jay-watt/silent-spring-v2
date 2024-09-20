@@ -5,6 +5,7 @@ import { a, useSpring, config } from '@react-spring/three'
 
 import Sound from './Sound'
 import Info from './Info'
+import Bird from './Bird'
 
 export default function DataObj({ sceneRadius, position, data }) {
   const bird = useRef(null)
@@ -70,7 +71,7 @@ export default function DataObj({ sceneRadius, position, data }) {
 
   return (
     <a.mesh ref={bird} position={position} scale={scale}>
-      <boxGeometry args={[size, size, size]} />
+      <Bird size={size} />
       <a.meshStandardMaterial
         color={'#0071bc'}
         transparent={true}
