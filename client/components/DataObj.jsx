@@ -15,7 +15,7 @@ export default function DataObj({ sceneRadius, position, data }) {
     data.Status === 5 ? data.Sound_Level - 4 : (data.Sound_Level - 4) * 2
 
   const maxDist = sceneRadius / 2.5
-  const minDist = maxDist / 4
+  const minDist = maxDist / 5
   const size = sceneRadius / 100
 
   const [selected, setSelected] = useState(0)
@@ -76,7 +76,7 @@ export default function DataObj({ sceneRadius, position, data }) {
         transparent={true}
         opacity={opacity}
       />
-      <Sound url={audioUrl} visible={visible.bool} volAdjust={volAdjust} />
+      <Sound ref={soundRef} url={audioUrl} visible={visible.bool} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
       {selected && visible.bool ? <Info data={data} /> : null}
     </a.mesh>

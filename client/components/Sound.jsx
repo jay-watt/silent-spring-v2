@@ -12,9 +12,9 @@ function Sound({ url, visible, volAdjust }) {
 
   useEffect(() => {
     sound.current.setBuffer(buffer)
-    sound.current.setRefDistance(20)
+    sound.current.setRefDistance(30)
     sound.current.setDistanceModel('inverse')
-    sound.current.setRolloffFactor(50)
+    sound.current.setRolloffFactor(20)
     sound.current.setLoop(true)
     fade(visible ? true : false, sound.current)
     camera.add(listener)
