@@ -16,8 +16,8 @@ function Controls() {
     <FirstPersonControls
       ref={controls}
       activeLook={true}
-      movementSpeed={30}
-      lookSpeed={0.05}
+      movementSpeed={20}
+      lookSpeed={0.01}
       target={controls.target}
       args={[camera, gl.domElement]}
     />
