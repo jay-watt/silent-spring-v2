@@ -17,7 +17,7 @@ function Controls() {
       ref={controls}
       activeLook={true}
       movementSpeed={20}
-      lookSpeed={0.01}
+      lookSpeed={0.025}
       target={controls.target}
       args={[camera, gl.domElement]}
     />

@@ -18,9 +18,9 @@ function Info({ data }) {
     <Html distanceFactor={2} position={[0, 0, 0]}>
       <div className="info">
         <p>
-          <b>{birdName}</b>
+          {birdName}
         </p>
-        {data.Media_Notes && <p>{data.Media_Notes}</p>}
+        {/* {data.Media_Notes && <p>{data.Media_Notes}</p>} */}
       </div>
     </Html>
   )
