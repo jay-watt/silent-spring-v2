@@ -76,7 +76,7 @@ export default function DataObj({ sceneRadius, position, data }) {
         transparent={true}
         opacity={opacity}
       />
-      <Sound ref={soundRef} url={audioUrl} visible={visible.bool} volAdjust={volAdjust} />
+      <Sound url={audioUrl} visible={visible.bool} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
       {selected && visible.bool ? <Info data={data} /> : null}
     </a.mesh>
