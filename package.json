@@ -43,6 +43,7 @@
     "jwks-rsa": "^2.0.4",
     "knex": "^1.0.1",
     "react-redux": "^7.2.5",
+    "tar": "^7.4.3",
     "three": "^0.168.0",
     "troika-3d": "^0.46.0",
     "troika-three-text": "^0.46.4",

@@ -10,7 +10,7 @@ export default function DataObj({ sceneRadius, position, data }) {
   const bird = useRef(null)
   const { camera } = useThree()
 
-  const audioUrl = `./server/public/audio/${data.Sound_Id}.mp3`
+  const audioUrl = `/audio/${data.Sound_Id}.mp3`
   const volAdjust =
     data.Status === 5 ? data.Sound_Level - 4 : (data.Sound_Level - 4) * 2
 
