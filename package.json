@@ -16,7 +16,7 @@
     "clean": "rimraf dist",
     "build": "npm install && vite build",
     "start": "node server/index.js",
-    "postinstall": "run-s db:migrate db:seed",
+    "postinstall": "npm-run-all db:migrate db:seed",
     "test": "jest --verbose --watchAll",
     "lint": "eslint --ext .js,.jsx ."
   },
