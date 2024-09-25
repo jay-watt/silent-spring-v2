@@ -9,19 +9,19 @@ function Info({ data }) {
 
   switch (data.Status) {
     case 1:
-      statusStr = "not threatened"
+      statusStr = "Not threatened"
       break
     case 2:
-      statusStr = "at risk of extinction"
+      statusStr = "At risk of extinction"
       break
     case 3:
-      statusStr = "high risk of extinction in the short-medium term"
+      statusStr = "High risk of extinction in the short-medium term"
       break
     case 4:
-      statusStr = "immediate high risk of extinction"
+      statusStr = "Immediate high risk of extinction"
       break
     case 5:
-      statusStr = "extinct"
+      statusStr = "Extinct"
       break
   }
 
@@ -40,6 +40,9 @@ function Info({ data }) {
         <p>
           {birdName}
         </p>
+        {data.Media_Notes != '' && <p className="mediaNotes">
+          {data.Media_Notes}
+        </p>}
         <p className="status">
           {statusStr}
         </p>

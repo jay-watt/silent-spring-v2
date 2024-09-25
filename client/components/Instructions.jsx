@@ -14,7 +14,7 @@ export default function Instructions() {
           <b>RIGHT CLICK</b> move backward
         </div> */}
         <div className="instructionsItem">
-          <b>WASD/ARROW KEYS</b> move around
+          <b>WASD</b> move around
         </div>
       </div>
 

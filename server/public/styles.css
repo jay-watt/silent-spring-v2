@@ -109,7 +109,7 @@ b {
 }
 
 .info {
-  /* min-width: 5000px; */
+  min-width: 6000px;
   font-family: 'Ubuntu Mono', monospace;
   height: 100%;
   font-size: 400px;
@@ -121,12 +121,16 @@ b {
   padding-top: 0px;
   animation: fadeIn 3s;
   background-color: rgba(255, 255, 255, 0.8);
-  white-space: nowrap;
+}
+
+.mediaNotes {
+  font-size: 250px;
+  font-weight: lighter;
+  font-style: italic;
 }
 
 .status {
   font-size: 250px;
-  font-weight: lighter;
 }
 
 /* rest of frame */
