@@ -124,6 +124,11 @@ b {
   white-space: nowrap;
 }
 
+.status {
+  font-size: 250px;
+  font-weight: lighter;
+}
+
 /* rest of frame */
 .frameInner {
   border: solid 3px #0071bc;

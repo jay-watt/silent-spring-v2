@@ -76,7 +76,7 @@ exports.seed = (knex) => {
           Te_Reo: 'Tāiko',
           English_Name: 'Black Petrel',
           Country: 'Aotearoa',
-          Status: 3,
+          Status: 4,
           Sound_Level: 8,
           Habitat: 'Coast',
           Media_Notes:
@@ -191,7 +191,7 @@ exports.seed = (knex) => {
           Te_Reo: 'Kawaupaka',
           English_Name: 'Little Shag',
           Country: 'Aotearoa',
-          Status: 3,
+          Status: 1,
           Sound_Level: 8,
           Habitat: 'Coastal, Fresh water ',
           Media_Notes:
@@ -283,7 +283,7 @@ exports.seed = (knex) => {
           Te_Reo: 'Kiwi Pukupuku',
           English_Name: 'Little Spotted Kiwi',
           Country: 'Aotearoa',
-          Status: 3,
+          Status: 2,
           Sound_Level: 6,
           Habitat: 'Forest/scrub',
           Media_Notes:

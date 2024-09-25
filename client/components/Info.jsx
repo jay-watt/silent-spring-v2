@@ -4,6 +4,26 @@ import { Html } from '@react-three/drei'
 
 function Info({ data }) {
   let birdName = ''
+  let statusStr
+  let statusDesc
+
+  switch (data.Status) {
+    case 1:
+      statusStr = "not threatened"
+      break
+    case 2:
+      statusStr = "at risk of extinction"
+      break
+    case 3:
+      statusStr = "high risk of extinction in the short-medium term"
+      break
+    case 4:
+      statusStr = "immediate high risk of extinction"
+      break
+    case 5:
+      statusStr = "extinct"
+      break
+  }
 
   function pickName() {
     if (data.Te_Reo === '') {
@@ -20,7 +40,9 @@ function Info({ data }) {
         <p>
           {birdName}
         </p>
-        {/* {data.Media_Notes && <p>{data.Media_Notes}</p>} */}
+        <p className="status">
+          {statusStr}
+        </p>
       </div>
     </Html>
   )
