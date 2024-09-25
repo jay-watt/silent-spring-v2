@@ -7,11 +7,15 @@ This web application creates an interactive 3D environment featuring audio eleme
 ## Features
 
 - **3D Environment:** Explore a dynamic 3D space populated with virtual representations of native birds
-- **Audio Elements:** Hear bird calls sourced from the Macaulay Library, enhancing the immersive experience
+- **Audio Elements:** Hear bird calls sourced from the Macaulay Library
 - **Dynamic Soundscape:** Witness how the disappearance of birds due to endangerment changes the sound environment, reflecting the impact of environmental changes
 - **Interactive Navigation:** Move through time and space to experience different phases of the bird population and their call patterns
 
-## Installation and Launching
+## Deployment
+
+Access web application at **https://silent-spring.onrender.com/**
+
+## Local Installation and Launching
 
 To get started with the project, follow these steps:
 
