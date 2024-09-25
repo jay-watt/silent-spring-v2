@@ -14,7 +14,7 @@
     "vite:start": "vite",
     "vite:build": "vite build",
     "clean": "rimraf dist",
-    "build": "cross-env NODE_ENV=development npm install && vite build",
+    "build": "npm install && vite build",
     "start": "node server/index.js",
     "postinstall": "npm-run-all db:migrate db:seed",
     "test": "jest --verbose --watchAll",
