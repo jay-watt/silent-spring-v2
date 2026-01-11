@@ -7,7 +7,7 @@ This web application creates an interactive 3D environment featuring audio eleme
 ## Features
 
 - **3D environment:** Explore a dynamic 3D space populated with virtual representations of native birds
-- **Audio elements:** Hear bird calls sourced from the Macaulay Library
+- **Audio elements:** Hear bird calls sourced from the Macaulay Library (https://media.ebird.org/catalog)
 - **Dynamic soundscape:** Witness how the disappearance of birds due to endangerment changes the sound environment, reflecting the impact of environmental changes
 - **Interactive navigation:** Move through time and space to experience different phases of the bird population and their call patterns
 
