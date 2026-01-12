@@ -6,7 +6,7 @@ import { a, useSpring, config } from '@react-spring/three'
 import Sound from './Sound'
 import Info from './Info'
 
-export default function DataObj({ sceneRadius, position, data }) {
+export default function DataObj({ sceneRadius, position, data, isActive }) {
   const bird = useRef(null)
   const { camera } = useThree()
 
@@ -76,7 +76,7 @@ export default function DataObj({ sceneRadius, position, data }) {
         transparent={true}
         opacity={opacity}
       />
-      <Sound url={audioUrl} visible={visible.bool} volAdjust={volAdjust} />
+      <Sound url={audioUrl} visible={visible.bool && isActive} volAdjust={volAdjust} />
       {/* Not using && because when false, returns a non-null value */}
       {selected && visible.bool ? <Info data={data} /> : null}
     </a.mesh>

@@ -44,14 +44,13 @@ export default function App() {
 
   return (
     <div className="frameContainer">
-      {enterReq ? (
-        data.length && (
-          <>
-            <Scene data={data} />
-            <Instructions />
-          </>
-        )
-      ) : (
+      {data.length > 0 && (
+        <div style={{ display: enterReq ? 'contents' : 'none' }}>
+          <Scene data={data} isActive={enterReq} />
+          <Instructions />
+        </div>
+      )}
+      {!enterReq && (
         <>
           <Landing />
           <div className="frameHeader"></div>

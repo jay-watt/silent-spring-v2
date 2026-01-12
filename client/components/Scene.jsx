@@ -1,23 +1,32 @@
 /* eslint-disable react/no-unknown-property */
-import React from 'react'
-import { Canvas } from '@react-three/fiber'
+import React, { useEffect, useRef } from 'react'
+import { Canvas, useThree } from '@react-three/fiber'
 
 import DataObj from './DataObj'
 import Controls from './Controls'
 
-function Scene({ data }) {
+function CameraReset({ isActive, size }) {
+  const { camera } = useThree()
+
+  useEffect(() => {
+    if (isActive) {
+      camera.position.set(0, 0, size * 1.5)
+    }
+  }, [isActive, , size])
+
+  return null
+}
+
+function Scene({ data, isActive }) {
   const size = 100
 
-  // const randomInt = (max) => Math.floor((Math.random() - 0.5) * max + 1)
-  // const randomCoords = () => [randomInt(size), randomInt(size), randomInt(size)]
   const randomCoords = () => {
     const u = Math.random();
     const v = Math.random();
-    const theta = 2 * Math.PI * u;  // azimuthal angle
-    const phi = Math.acos(2 * v - 1);  // polar angle
-    const r = Math.cbrt(Math.random()) * size*0.85;  // uniform radial distribution
+    const theta = 2 * Math.PI * u;
+    const phi = Math.acos(2 * v - 1);
+    const r = Math.cbrt(Math.random()) * size*0.85;
 
-    // Convert spherical coordinates to Cartesian coordinates
     const x = r * Math.sin(phi) * Math.cos(theta);
     const y = r * Math.sin(phi) * Math.sin(theta);
     const z = r * Math.cos(phi);
@@ -25,12 +34,10 @@ function Scene({ data }) {
     return [x, y, z];
   };
 
-  // TODO change sphere wireframe from tri to quad
-  // TODO move coord helpers into seperate helper module
-
   return (
     <div className="frameInner">
       <Canvas camera={{ position: [0, 0, size*1.5] }}>
+        <CameraReset isActive={isActive} size={size} />
         <ambientLight intensity={0.5} />
         <directionalLight position={[0, 10, 10]} intensity={1} />
         <mesh position={[0, 0, 0]}>
@@ -42,17 +49,18 @@ function Scene({ data }) {
             color={'#0071bc'}
           />
         </mesh>
-        {data.map((data, idx) => {
+        {data.map((item) => {
           return (
             <DataObj
-              key={data.id}
+              key={item.id}
               sceneRadius={size}
               position={randomCoords()}
-              data={data}
+              data={item}
+              isActive={isActive}
             />
           )
         })}
-        <Controls />
+        <Controls isActive={isActive} />
       </Canvas>
     </div>
   )
