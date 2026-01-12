@@ -23,6 +23,10 @@ body,
   100% { opacity: 1; }
 }
 
+.scene-fade-in {
+  animation: fadeIn 5s ease-in-out;
+}
+
 h1 {
   font-size: 7rem;
   margin-top: 1rem;

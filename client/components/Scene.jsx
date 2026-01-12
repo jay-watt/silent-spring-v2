@@ -35,7 +35,7 @@ function Scene({ data, isActive }) {
   };
 
   return (
-    <div className="frameInner">
+    <div className="frameInner scene-fade-in">
       <Canvas camera={{ position: [0, 0, size*1.5] }}>
         <CameraReset isActive={isActive} size={size} />
         <ambientLight intensity={0.5} />
